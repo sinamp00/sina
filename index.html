@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Avin | تجربه خرید لوکس</title>
+    <title>Avin Premium | تجربه خرید لوکس</title>
     
     <!-- کتابخانه‌های مورد نیاز -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -148,9 +148,11 @@
                     </div>
                     
                     <div className="flex-1 flex justify-center order-2 md:order-none" onClick={() => setView('catalog')}>
-                        <div className="h-12 md:h-16 flex items-center cursor-pointer transition-transform hover:scale-105 active:scale-95">
-                             <span className="text-xl md:text-3xl font-black italic tracking-tighter text-[#C5A059]">AVIN</span>
-                        </div>
+                        <img 
+                            src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" 
+                            alt="Avin" 
+                            className="h-14 md:h-24 w-auto cursor-pointer transition-transform hover:scale-105 active:scale-95"
+                        />
                     </div>
 
                     <div className="flex items-center gap-2 order-3 md:order-none">
@@ -163,7 +165,7 @@
 
         const CatalogView = memo(({ products, filterCat, setFilterCat, searchQuery, setSearchQuery, isDarkMode, currentSlide, setCurrentSlide, slides, onProductClick, onWishlistToggle, wishlist }) => (
             <main className="pb-24">
-                {/* Hero Slider - اصلاح شده برای جلوگیری از پرش کل صفحه */}
+                {/* Hero Slider */}
                 <div className="px-4 md:px-10 py-4">
                     <div className={`relative h-44 md:h-72 rounded-[2.5rem] overflow-hidden bg-gradient-to-r ${slides[currentSlide].color} text-white flex items-center p-6 md:p-14 shadow-2xl border border-white/10 transition-all duration-700`}>
                         <div key={currentSlide} className="relative z-10 space-y-3 md:space-y-6 max-w-xs md:max-w-xl slide-content-anim">
@@ -346,7 +348,6 @@
                 return () => clearInterval(interval);
             }, [slides.length]);
 
-            // فقط وقتی المان‌های جدید اضافه می‌شوند آیکون‌ها را آپدیت کن
             useEffect(() => { 
                 if (window.lucide) lucide.createIcons(); 
             }, [view, isCartOpen, isChatOpen, currentSlide]);
@@ -468,6 +469,7 @@
                     )}
 
                     <footer className={`py-16 text-center border-t mt-20 ${isDarkMode ? 'bg-black border-zinc-900' : 'bg-white border-slate-100'}`}>
+                         <img src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" className="h-14 mx-auto mb-4 opacity-30" />
                          <p className="text-[9px] font-black opacity-30 tracking-[0.8em] uppercase">Avin Premium Beauty Experience • 2025</p>
                     </footer>
                 </div>
