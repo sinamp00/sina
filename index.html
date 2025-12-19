@@ -37,7 +37,6 @@
             position: relative;
         }
 
-        /* پس‌زمینه متحرک لوکس‌تر */
         @keyframes drift {
             0% { transform: translate(0, 0) scale(1); }
             50% { transform: translate(2vw, 2vh) scale(1.05); }
@@ -65,7 +64,7 @@
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; opacity: 1; transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .price-text {
@@ -75,7 +74,6 @@
             font-weight: 900;
         }
 
-        /* افکت درخشش محصولات */
         .product-card {
             box-shadow: 0 4px 20px -5px rgba(197, 160, 89, 0.1);
             border: 1px solid rgba(197, 160, 89, 0.05);
@@ -164,6 +162,14 @@
                 { id: 2, title: "مراقبت پوست", desc: "مشاوره اختصاصی با دستیار هوشمند آوین", color: "from-[#1A1A1A] to-[#4A4A4A]" }
             ];
 
+            // Auto-play Slider
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setCurrentSlide((prev) => (prev + 1) % slides.length);
+                }, 5000);
+                return () => clearInterval(interval);
+            }, []);
+
             useEffect(() => { 
                 if (window.lucide) lucide.createIcons(); 
             }, [view, selectedProduct, activeTab, isCartOpen, isChatOpen, isDarkMode, filterCat, wishlist]);
@@ -192,7 +198,7 @@
             const Header = () => (
                 <header className={`sticky top-0 z-[100] w-full border-b transition-all duration-500 glass ${isDarkMode ? 'bg-black/90 border-zinc-900' : 'bg-white/90 border-slate-100'}`}>
                     <div className="app-wrapper flex items-center justify-between h-16 md:h-24 px-4 md:px-10">
-                        <div className="flex items-center gap-2 md:gap-4">
+                        <div className="flex items-center gap-2 md:gap-4 order-1 md:order-none">
                             <button onClick={() => setIsDarkMode(!isDarkMode)} className={`p-2.5 md:p-3.5 rounded-full transition-all active:scale-90 ${isDarkMode ? 'bg-zinc-900 text-[#C5A059]' : 'bg-slate-50 text-slate-600'}`}>
                                 {isDarkMode ? <i data-lucide="sun" className="w-4 h-4 md:w-5 md:h-5"></i> : <i data-lucide="moon" className="w-4 h-4 md:w-5 md:h-5"></i>}
                             </button>
@@ -202,15 +208,15 @@
                             </button>
                         </div>
                         
-                        <div className="flex-1 flex justify-center" onClick={() => setView('catalog')}>
+                        <div className="flex-1 flex justify-center order-2 md:order-none" onClick={() => setView('catalog')}>
                             <img 
                                 src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" 
                                 alt="Avin" 
-                                className="h-12 md:h-24 w-auto cursor-pointer"
+                                className="h-14 md:h-24 w-auto cursor-pointer transition-transform hover:scale-105 active:scale-95"
                             />
                         </div>
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 order-3 md:order-none">
                              <span className="hidden md:inline text-[9px] font-black opacity-40 uppercase tracking-tighter">Premium Collection</span>
                              <button className="p-2.5 md:p-3.5 rounded-full bg-transparent"><i data-lucide="menu" className="w-4 h-4 md:w-5 md:h-5"></i></button>
                         </div>
@@ -220,13 +226,13 @@
 
             const CatalogView = () => (
                 <main className="page-transition pb-24">
-                    {/* Hero Slider */}
+                    {/* Hero Slider - Smaller Height */}
                     <div className="px-4 md:px-10 py-4">
-                        <div className={`relative h-48 md:h-72 rounded-[2rem] overflow-hidden bg-gradient-to-r ${slides[currentSlide].color} text-white flex items-center p-6 md:p-12 shadow-xl border border-white/10`}>
-                            <div className="relative z-10 space-y-3 md:space-y-4 max-w-xs md:max-w-lg">
-                                <h2 className="text-xl md:text-5xl font-black leading-tight drop-shadow-md">{slides[currentSlide].title}</h2>
-                                <p className="text-[10px] md:text-lg opacity-90 font-medium">{slides[currentSlide].desc}</p>
-                                <button className="bg-white text-black px-5 md:px-10 py-2 md:py-3.5 rounded-full font-black text-[10px] md:text-sm hover:scale-105 active:scale-95 transition-all shadow-lg">اکنون کشف کنید</button>
+                        <div className={`relative h-40 md:h-60 rounded-[2rem] overflow-hidden bg-gradient-to-r ${slides[currentSlide].color} text-white flex items-center p-6 md:p-12 shadow-xl border border-white/10`}>
+                            <div className="relative z-10 space-y-2 md:space-y-4 max-w-xs md:max-w-lg">
+                                <h2 className="text-xl md:text-4xl font-black leading-tight drop-shadow-md">{slides[currentSlide].title}</h2>
+                                <p className="text-[10px] md:text-sm opacity-90 font-medium">{slides[currentSlide].desc}</p>
+                                <button className="bg-white text-black px-5 md:px-8 py-2 md:py-2.5 rounded-full font-black text-[10px] md:text-xs hover:scale-105 active:scale-95 transition-all shadow-lg">اکنون کشف کنید</button>
                             </div>
                             <div className="absolute left-4 bottom-4 flex gap-1.5 z-20">
                                 {slides.map((_, i) => (
@@ -234,12 +240,12 @@
                                 ))}
                             </div>
                             <div className="absolute left-10 bottom-0 top-0 hidden md:flex items-center opacity-10">
-                                <i data-lucide="crown" className="w-60 h-60 rotate-12"></i>
+                                <i data-lucide="crown" className="w-48 h-48 rotate-12"></i>
                             </div>
                         </div>
                     </div>
 
-                    {/* ادغام جستجو و فیلتر در یک خط */}
+                    {/* Filters & Search Row */}
                     <div className="px-4 md:px-10 mb-8 flex flex-col md:flex-row items-center gap-4">
                         <div className="flex gap-1 overflow-x-auto no-scrollbar pb-1 w-full md:w-auto">
                             {["همه", "عطر و ادکلن", "مراقبت پوست", "آرایشی", "مراقبت مو"].map(c => (
@@ -403,14 +409,14 @@
                         </div>
                     )}
 
-                    {/* Cart Drawer */}
+                    {/* Cart Drawer - Opens from Right */}
                     {isCartOpen && (
-                        <div className="fixed inset-0 z-[300] flex justify-end">
+                        <div className="fixed inset-0 z-[300] flex justify-start">
                             <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setIsCartOpen(false)}></div>
-                            <div className={`relative w-4/5 max-w-sm h-full p-6 flex flex-col animate-in slide-in-from-left duration-300 ${isDarkMode ? 'bg-[#0A0A0A] text-white' : 'bg-white text-[#1A1A1A]'}`}>
+                            <div className={`relative w-4/5 max-w-sm h-full p-6 flex flex-col shadow-2xl animate-in slide-in-from-right duration-500 ${isDarkMode ? 'bg-[#0A0A0A] text-white' : 'bg-white text-[#1A1A1A]'}`}>
                                 <div className="flex justify-between items-center mb-10">
-                                    <button onClick={() => setIsCartOpen(false)} className="p-2"><i data-lucide="x" className="w-6 h-6"></i></button>
-                                    <h2 className="text-xl font-black italic border-b-2 border-[#C5A059] pb-1 uppercase">Bag</h2>
+                                    <button onClick={() => setIsCartOpen(false)} className="p-2 order-2"><i data-lucide="x" className="w-6 h-6"></i></button>
+                                    <h2 className="text-xl font-black italic border-b-2 border-[#C5A059] pb-1 uppercase order-1">سفارش‌ها</h2>
                                 </div>
                                 <div className="flex-1 overflow-y-auto space-y-4 no-scrollbar">
                                     {cart.map((item, i) => (
@@ -422,11 +428,11 @@
                                             </div>
                                         </div>
                                     ))}
-                                    {cart.length === 0 && <div className="h-full flex items-center justify-center opacity-30 italic font-black text-sm">YOUR BAG IS EMPTY</div>}
+                                    {cart.length === 0 && <div className="h-full flex items-center justify-center opacity-30 italic font-black text-sm">لیست سفارشات خالی است</div>}
                                 </div>
                                 <div className="pt-6 border-t mt-6">
                                     <div className="flex justify-between mb-4 font-black">
-                                        <span className="opacity-40 text-[10px]">TOTAL:</span>
+                                        <span className="opacity-40 text-[10px]">مبلغ نهایی:</span>
                                         <span className="price-text">{cart.reduce((a, b) => a + b.price, 0).toLocaleString()} تومان</span>
                                     </div>
                                     <button className="w-full py-4 rounded-2xl bg-[#C5A059] text-black font-black text-sm shadow-xl active:scale-95 transition-all">تکمیل سفارش نهایی</button>
