@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Avin Premium | تجربه خرید لوکس</title>
     
     <!-- کتابخانه‌های مورد نیاز -->
@@ -18,6 +18,7 @@
         * {
             font-family: 'Vazirmatn', sans-serif;
             -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
         }
 
         body {
@@ -46,7 +47,7 @@
         .liquid-blob {
             position: fixed;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(100px);
             animation: drift 20s infinite alternate ease-in-out;
             pointer-events: none;
             z-index: -1;
@@ -58,17 +59,15 @@
             -webkit-backdrop-filter: blur(12px) saturate(160%);
         }
 
-        /* انیمیشن تغییر صفحه */
         .page-transition {
             animation: fadeIn 0.5s ease-out forwards;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; opacity: 1; transform: translateY(0); }
         }
 
-        /* استایل قیمت و لایک به سبک لوکس */
         .price-text {
             background: linear-gradient(to left, #C5A059, #D4AF37);
             -webkit-background-clip: text;
@@ -76,19 +75,35 @@
             font-weight: 900;
         }
 
-        .brand-logo-container {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
+        /* افکت درخشش محصولات */
+        .product-card {
+            box-shadow: 0 4px 20px -5px rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .brand-logo-container:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #C5A059;
+        .product-card:hover {
+            box-shadow: 0 10px 40px -10px rgba(197, 160, 89, 0.4);
+            border-color: rgba(197, 160, 89, 0.3);
+            transform: translateY(-8px) scale(1.02);
         }
 
         .ai-btn-float { animation: float 4s infinite ease-in-out; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+        .price-badge {
+            background: #1A1A1A;
+            color: #C5A059;
+            font-size: 10px;
+            font-weight: 900;
+            padding: 2px 8px;
+            border-radius: 99px;
+        }
+
+        .product-tab-active {
+            color: #C5A059;
+            border-bottom: 2px solid #C5A059;
+        }
     </style>
 </head>
 <body class="bg-[#FAF9F6] text-[#1A1A1A]">
@@ -109,7 +124,7 @@
             { id: 9, name: "خط چشم ضدآب کوزت", category: "آرایشی", price: 280000, oldPrice: 350000, discount: 20, stock: 40, brand: "Makeup Pro", images: ["https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=800"], description: "دقت بالا و خشک شدن سریع.", specs: [{ label: "نوع", value: "ماژیکی" }], reviews: 23 },
             { id: 10, name: "لوسیون بدن آلوئه‌ورا", category: "مراقبت پوست", price: 350000, oldPrice: 420000, discount: 16, stock: 25, brand: "Avin Care", images: ["https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800"], description: "آبرسان عمقی پوست.", specs: [{ label: "حجم", value: "۲۵۰ میلی‌لیتر" }], reviews: 88 },
             { id: 11, name: "ریمل حجم‌دهنده اکستریم", category: "آرایشی", price: 540000, oldPrice: 700000, discount: 22, stock: 18, brand: "MAC", images: ["https://images.unsplash.com/photo-1591360236480-4ed861025a18?w=800"], description: "مژه‌هایی بلند و پرپشت.", specs: [{ label: "رنگ", value: "مشکی کربن" }], reviews: 94 },
-            { id: 12, name: "روغن پاک‌کننده صورت", category: "مراقبت پوست", price: 620000, oldPrice: null, discount: 0, stock: 12, brand: "Lancome", images: ["https://images.unsplash.com/photo-1617897903246-719242758050?w=800"], description: "پاک‌کننده آرایش ضدآب.", specs: [{ label: "حجم", value: "۱صد و ۵۰ میلی‌لیتر" }], reviews: 41 },
+            { id: 12, name: "روغن پاک‌کننده صورت", category: "مراقبت پوست", price: 620000, oldPrice: null, discount: 0, stock: 12, brand: "Lancome", images: ["https://images.unsplash.com/photo-1617897903246-719242758050?w=800"], description: "پاک‌کننده آرایش ضدآب.", specs: [{ label: "حجم", value: "۱۵۰ میلی‌لیتر" }], reviews: 41 },
             { id: 13, name: "عطر زنانه جادور آوین", category: "عطر و ادکلن", price: 4800000, oldPrice: 5500000, discount: 12, stock: 3, brand: "Dior", images: ["https://images.unsplash.com/photo-1585232351009-aa87416fca90?w=800"], description: "رایحه گلی و ملایم.", specs: [{ label: "حجم", value: "۷۵ میلی‌لیتر" }], reviews: 156, badge: "لوکس" },
             { id: 14, name: "پنکیک مات‌کننده صورت", category: "آرایشی", price: 410000, oldPrice: 520000, discount: 21, stock: 15, brand: "Estee", images: ["https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=800"], description: "کنترل چربی پوست.", specs: [{ label: "رنگ", value: "طبیعی" }], reviews: 29 },
             { id: 15, name: "تونر آبرسان گلاب", category: "مراقبت پوست", price: 190000, oldPrice: 250000, discount: 24, stock: 50, brand: "Avin Care", images: ["https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=800"], description: "تسکین‌دهنده پوست.", specs: [{ label: "حجم", value: "۲۰۰ میلی‌لیتر" }], reviews: 105 },
@@ -130,18 +145,9 @@
             { id: 30, name: "ماسک ورقه‌ای آبرسان", category: "مراقبت پوست", price: 45000, oldPrice: 60000, discount: 25, stock: 200, brand: "Avin Care", images: ["https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=800"], description: "بمب آبرسانی پوست.", specs: [{ label: "تعداد", value: "۱ عدد" }], reviews: 310 }
         ];
 
-        const BRAND_LOGOS = [
-            { name: "DIOR", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/1024px-Dior_Logo.svg.png" },
-            { name: "CHANEL", url: "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Chanel_logo_interlocking_cs.svg/1024px-Chanel_logo_interlocking_cs.svg.png" },
-            { name: "LANCOME", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Lanc%C3%B4me_logo.svg/1024px-Lanc%C3%B4me_logo.svg.png" },
-            { name: "MAC", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/MAC_Cosmetics_logo.svg/1024px-MAC_Cosmetics_logo.svg.png" },
-            { name: "ESTEE", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Est%C3%A9e_Lauder_logo.svg/1024px-Est%C3%A9e_Lauder_logo.svg.png" }
-        ];
-
         const App = () => {
             const [isDarkMode, setIsDarkMode] = useState(false);
             const [view, setView] = useState('catalog');
-            const [products, setProducts] = useState(INITIAL_PRODUCTS);
             const [cart, setCart] = useState([]);
             const [wishlist, setWishlist] = useState([]);
             const [selectedProduct, setSelectedProduct] = useState(null);
@@ -158,14 +164,16 @@
                 { id: 2, title: "مراقبت پوست", desc: "مشاوره اختصاصی با دستیار هوشمند آوین", color: "from-[#1A1A1A] to-[#4A4A4A]" }
             ];
 
-            useEffect(() => { lucide.createIcons(); }, [view, selectedProduct, activeTab, isCartOpen, isChatOpen, isDarkMode, filterCat, wishlist]);
+            useEffect(() => { 
+                if (window.lucide) lucide.createIcons(); 
+            }, [view, selectedProduct, activeTab, isCartOpen, isChatOpen, isDarkMode, filterCat, wishlist]);
 
             const filteredProducts = useMemo(() => {
-                return products.filter(p => 
+                return INITIAL_PRODUCTS.filter(p => 
                     (filterCat === 'همه' || p.category === filterCat) &&
                     (p.name.includes(searchQuery))
                 );
-            }, [products, filterCat, searchQuery]);
+            }, [filterCat, searchQuery]);
 
             const addToCart = (p) => {
                 setCart([...cart, { ...p, cartId: Date.now() }]);
@@ -181,101 +189,102 @@
                 }
             };
 
-            const Logo = () => (
-                <div className="flex items-center cursor-pointer group" onClick={() => setView('catalog')}>
-                    <img 
-                        src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" 
-                        alt="Avin" 
-                        className="h-20 md:h-24 lg:h-32 w-auto transition-transform duration-500 group-hover:scale-105 filter drop-shadow-2xl"
-                    />
-                </div>
-            );
+            const Header = () => (
+                <header className={`sticky top-0 z-[100] w-full border-b transition-all duration-500 glass ${isDarkMode ? 'bg-black/90 border-zinc-900' : 'bg-white/90 border-slate-100'}`}>
+                    <div className="app-wrapper flex items-center justify-between h-16 md:h-24 px-4 md:px-10">
+                        <div className="flex items-center gap-2 md:gap-4">
+                            <button onClick={() => setIsDarkMode(!isDarkMode)} className={`p-2.5 md:p-3.5 rounded-full transition-all active:scale-90 ${isDarkMode ? 'bg-zinc-900 text-[#C5A059]' : 'bg-slate-50 text-slate-600'}`}>
+                                {isDarkMode ? <i data-lucide="sun" className="w-4 h-4 md:w-5 md:h-5"></i> : <i data-lucide="moon" className="w-4 h-4 md:w-5 md:h-5"></i>}
+                            </button>
+                            <button onClick={() => setIsCartOpen(true)} className={`relative p-2.5 md:p-3.5 rounded-full transition-all active:scale-90 ${isDarkMode ? 'bg-zinc-900' : 'bg-slate-50'}`}>
+                                <i data-lucide="shopping-basket" className="w-4 h-4 md:w-5 md:h-5 text-[#C5A059]"></i>
+                                {cart.length > 0 && <span className="absolute -top-1 -right-1 bg-[#C5A059] text-black w-4 h-4 md:w-5 md:h-5 rounded-full text-[8px] md:text-[10px] flex items-center justify-center font-black shadow-lg">{cart.length}</span>}
+                            </button>
+                        </div>
+                        
+                        <div className="flex-1 flex justify-center" onClick={() => setView('catalog')}>
+                            <img 
+                                src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" 
+                                alt="Avin" 
+                                className="h-12 md:h-24 w-auto cursor-pointer"
+                            />
+                        </div>
 
-            const BrandsSection = () => (
-                <div className="py-6 px-6 lg:px-10 overflow-x-auto no-scrollbar">
-                    <div className={`flex items-center gap-6 md:gap-10 justify-center min-w-max p-5 rounded-3xl glass ${isDarkMode ? 'bg-zinc-900/40' : 'bg-white/40 border border-white/50'}`}>
-                        {BRAND_LOGOS.map((b, i) => (
-                            <div key={i} className="brand-logo-container flex items-center justify-center w-20 md:w-28 h-10 rounded-xl px-4 py-2">
-                                <img 
-                                    src={b.url} 
-                                    alt={b.name} 
-                                    className={`max-w-full max-h-full object-contain brand-logo ${isDarkMode ? 'invert brightness-200' : ''}`}
-                                />
-                            </div>
-                        ))}
+                        <div className="flex items-center gap-2">
+                             <span className="hidden md:inline text-[9px] font-black opacity-40 uppercase tracking-tighter">Premium Collection</span>
+                             <button className="p-2.5 md:p-3.5 rounded-full bg-transparent"><i data-lucide="menu" className="w-4 h-4 md:w-5 md:h-5"></i></button>
+                        </div>
                     </div>
-                </div>
+                </header>
             );
 
             const CatalogView = () => (
-                <main className="page-transition pb-20">
-                    {/* Hero Slider - Scaled down height as requested */}
-                    <div className="px-6 lg:px-10 pt-4">
-                        <div className={`relative h-44 md:h-64 rounded-[2.5rem] overflow-hidden bg-gradient-to-r ${slides[currentSlide].color} text-white flex items-center p-8 md:p-12 shadow-2xl border border-white/10`}>
-                            <div className="relative z-10 space-y-2 md:space-y-4 max-w-lg">
-                                <h2 className="text-2xl md:text-5xl font-black leading-tight drop-shadow-md">{slides[currentSlide].title}</h2>
-                                <p className="text-xs md:text-lg opacity-90 font-medium">{slides[currentSlide].desc}</p>
-                                <button className="bg-white text-black px-6 md:px-10 py-2 md:py-3.5 rounded-full font-black text-[10px] md:text-sm hover:scale-105 active:scale-95 transition-all shadow-lg">اکنون کشف کنید</button>
+                <main className="page-transition pb-24">
+                    {/* Hero Slider */}
+                    <div className="px-4 md:px-10 py-4">
+                        <div className={`relative h-48 md:h-72 rounded-[2rem] overflow-hidden bg-gradient-to-r ${slides[currentSlide].color} text-white flex items-center p-6 md:p-12 shadow-xl border border-white/10`}>
+                            <div className="relative z-10 space-y-3 md:space-y-4 max-w-xs md:max-w-lg">
+                                <h2 className="text-xl md:text-5xl font-black leading-tight drop-shadow-md">{slides[currentSlide].title}</h2>
+                                <p className="text-[10px] md:text-lg opacity-90 font-medium">{slides[currentSlide].desc}</p>
+                                <button className="bg-white text-black px-5 md:px-10 py-2 md:py-3.5 rounded-full font-black text-[10px] md:text-sm hover:scale-105 active:scale-95 transition-all shadow-lg">اکنون کشف کنید</button>
                             </div>
-                            <div className="absolute left-10 bottom-0 top-0 flex items-center opacity-10">
-                                <i data-lucide="crown" className="w-40 h-40 md:w-60 md:h-60 rotate-12"></i>
-                            </div>
-                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                            <div className="absolute left-4 bottom-4 flex gap-1.5 z-20">
                                 {slides.map((_, i) => (
-                                    <div key={i} onClick={() => setCurrentSlide(i)} className={`w-1.5 h-1.5 rounded-full cursor-pointer transition-all ${currentSlide === i ? 'bg-white w-6' : 'bg-white/30'}`}></div>
+                                    <div key={i} onClick={() => setCurrentSlide(i)} className={`h-1.5 rounded-full cursor-pointer transition-all ${currentSlide === i ? 'bg-white w-6' : 'bg-white/30 w-1.5'}`}></div>
                                 ))}
+                            </div>
+                            <div className="absolute left-10 bottom-0 top-0 hidden md:flex items-center opacity-10">
+                                <i data-lucide="crown" className="w-60 h-60 rotate-12"></i>
                             </div>
                         </div>
                     </div>
 
-                    <BrandsSection />
-
-                    {/* Filters & Search - More compact */}
-                    <div className="px-6 lg:px-10 mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
-                        <div className="flex gap-1.5 overflow-x-auto no-scrollbar rtl w-full md:w-auto">
+                    {/* ادغام جستجو و فیلتر در یک خط */}
+                    <div className="px-4 md:px-10 mb-8 flex flex-col md:flex-row items-center gap-4">
+                        <div className="flex gap-1 overflow-x-auto no-scrollbar pb-1 w-full md:w-auto">
                             {["همه", "عطر و ادکلن", "مراقبت پوست", "آرایشی", "مراقبت مو"].map(c => (
                                 <button 
                                     key={c} 
                                     onClick={() => setFilterCat(c)}
-                                    className={`px-6 py-2.5 rounded-xl text-[10px] font-black transition-all border ${filterCat === c ? (isDarkMode ? 'bg-[#C5A059] text-black border-[#C5A059] shadow-lg shadow-gold-500/20' : 'bg-[#1A1A1A] text-white border-[#1A1A1A] shadow-xl') : (isDarkMode ? 'bg-zinc-900 border-zinc-800 text-zinc-500' : 'bg-white border-slate-100 text-slate-400')}`}
+                                    className={`whitespace-nowrap px-5 py-2.5 rounded-2xl text-[10px] font-black transition-all border ${filterCat === c ? (isDarkMode ? 'bg-[#C5A059] text-black border-[#C5A059]' : 'bg-[#1A1A1A] text-white border-[#1A1A1A]') : (isDarkMode ? 'bg-zinc-900 border-zinc-800 text-zinc-500' : 'bg-white border-slate-100 text-slate-400')}`}
                                 >
                                     {c}
                                 </button>
                             ))}
                         </div>
-                        <div className="relative w-full md:w-64">
+                        <div className="relative flex-1 w-full md:w-auto">
                             <input 
-                                placeholder="جستجوی خاص..." 
-                                className={`w-full border-none rounded-xl px-10 py-2.5 outline-none text-[11px] font-bold transition-all shadow-sm ${isDarkMode ? 'bg-zinc-900 text-white placeholder-zinc-700' : 'bg-white text-slate-900 placeholder-slate-300'}`}
+                                placeholder="جستجوی برند یا محصول..." 
+                                className={`w-full rounded-2xl px-10 py-2.5 md:py-3 outline-none text-[11px] font-bold transition-all shadow-sm ${isDarkMode ? 'bg-zinc-900 text-white placeholder-zinc-700' : 'bg-white text-slate-900 border border-slate-100 placeholder-slate-300'}`}
                                 value={searchQuery}
                                 onChange={e => setSearchQuery(e.target.value)}
                             />
-                            <i data-lucide="search" className="absolute right-3 top-2.5 w-4 h-4 opacity-30"></i>
+                            <i data-lucide="search" className="absolute right-3.5 top-2.5 md:top-3.5 w-4 h-4 opacity-30"></i>
                         </div>
                     </div>
 
-                    {/* Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 px-6 lg:px-10">
+                    {/* Products Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-8 px-4 md:px-10">
                         {filteredProducts.map(p => {
                              const isLiked = wishlist.some(item => item.id === p.id);
                              return (
-                                <div key={p.id} onClick={() => { setSelectedProduct(p); setView('details'); setActiveImgIdx(0); }} className={`group relative flex flex-col rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer border p-2.5 ${isDarkMode ? 'bg-zinc-900 border-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' : 'bg-white border-slate-100 shadow-sm hover:shadow-xl'}`}>
-                                    <div className="relative aspect-square overflow-hidden rounded-[1.6rem] bg-gray-50">
+                                <div key={p.id} onClick={() => { setSelectedProduct(p); setView('details'); setActiveImgIdx(0); }} className={`product-card group flex flex-col rounded-[2.2rem] overflow-hidden cursor-pointer border p-2.5 ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-slate-50'}`}>
+                                    <div className="relative aspect-square overflow-hidden rounded-[1.8rem] bg-gray-50">
                                         <img src={p.images[0]} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                                         {p.discount > 0 && <div className="absolute top-3 right-3 price-badge">-{p.discount}%</div>}
                                     </div>
-                                    <div className="p-3 text-right space-y-1.5 flex-1 flex flex-col">
-                                        <span className="text-[8px] font-bold opacity-40 uppercase tracking-widest">{p.brand}</span>
-                                        <h3 className="text-[12px] font-black truncate leading-snug flex-1">{p.name}</h3>
-                                        <div className={`flex justify-between items-center pt-3 border-t ${isDarkMode ? 'border-zinc-800' : 'border-slate-50'}`}>
-                                            <div className="flex flex-col">
-                                                <div className="text-[14px] price-text">{p.price.toLocaleString()} <span className="text-[8px] font-normal opacity-70">تومان</span></div>
-                                            </div>
+                                    <div className="p-3 text-right space-y-1.5 flex-1 flex flex-col justify-between">
+                                        <div>
+                                            <span className="text-[8px] font-bold opacity-40 uppercase tracking-[0.2em]">{p.brand}</span>
+                                            <h3 className="text-[12px] font-black truncate leading-tight mt-0.5">{p.name}</h3>
+                                        </div>
+                                        <div className="flex justify-between items-center pt-3 border-t border-transparent group-hover:border-zinc-100/10">
+                                            <div className="text-[14px] price-text">{p.price.toLocaleString()} <span className="text-[8px] font-normal opacity-70">تومان</span></div>
                                             <button 
                                                 onClick={(e) => { e.stopPropagation(); toggleWishlist(p); }} 
-                                                className={`p-2 rounded-lg transition-all active:scale-75 ${isLiked ? 'bg-rose-500/10' : 'hover:bg-gray-100 opacity-30'}`}
+                                                className={`p-2 rounded-xl transition-all ${isLiked ? 'bg-rose-500/10' : 'hover:bg-gray-100 opacity-20'}`}
                                             >
-                                                <i data-lucide="heart" className={`w-4 h-4 transition-colors ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`}></i>
+                                                <i data-lucide="heart" className={`w-4 h-4 ${isLiked ? 'fill-rose-500 text-rose-500' : ''}`}></i>
                                             </button>
                                         </div>
                                     </div>
@@ -287,75 +296,74 @@
             );
 
             const ProductDetails = ({ product }) => (
-                <div className="page-transition pb-20 pt-4 px-6 lg:px-10">
-                    <nav className={`flex items-center gap-2 text-[10px] font-bold mb-6 py-3 border-b ${isDarkMode ? 'text-zinc-500 border-zinc-800' : 'text-slate-400 border-slate-100'}`}>
-                        <span className="cursor-pointer hover:text-[#C5A059] transition-colors" onClick={() => setView('catalog')}>بازگشت به آوین</span>
-                        <i data-lucide="chevron-left" className="w-3 h-3 opacity-50"></i>
-                        <span className={isDarkMode ? 'text-white' : 'text-slate-900'}>{product.name}</span>
+                <div className="page-transition pb-24 px-4 md:px-10 pt-4">
+                    <nav className={`flex items-center gap-2 text-[10px] font-bold mb-6 opacity-50 ${isDarkMode ? 'text-zinc-500' : 'text-slate-400'}`}>
+                        <span className="cursor-pointer" onClick={() => setView('catalog')}>بازگشت به آوین</span>
+                        <i data-lucide="chevron-left" className="w-3 h-3"></i>
+                        <span>{product.name}</span>
                     </nav>
 
-                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-                        <div className="w-full lg:w-[40%] flex flex-col md:flex-row-reverse gap-3">
-                            <div className={`flex-1 border rounded-[2.5rem] overflow-hidden relative group p-10 flex items-center justify-center ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-slate-100'}`}>
-                                <img src={product.images[activeImgIdx]} className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110" />
-                                {product.discount > 0 && <div className="absolute top-6 right-6 price-badge text-sm px-3 py-1">{product.discount}%</div>}
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
+                        <div className="w-full lg:w-1/2 flex flex-col md:flex-row-reverse gap-3">
+                            <div className={`flex-1 aspect-square rounded-[2rem] overflow-hidden border p-8 flex items-center justify-center relative ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-slate-100 shadow-sm'}`}>
+                                <img src={product.images[activeImgIdx]} className="max-w-full max-h-full object-contain" />
+                                {product.discount > 0 && <div className="absolute top-4 right-4 price-badge">%{product.discount}</div>}
                             </div>
                             <div className="flex md:flex-col gap-2 overflow-x-auto no-scrollbar md:w-20">
                                 {product.images.map((img, i) => (
-                                    <div key={i} onClick={() => setActiveImgIdx(i)} className={`w-16 h-16 md:w-full aspect-square border rounded-xl overflow-hidden cursor-pointer transition-all ${activeImgIdx === i ? 'border-[#C5A059] ring-2 ring-[#C5A059]/20' : (isDarkMode ? 'border-zinc-800 bg-zinc-900' : 'border-slate-100 bg-white hover:border-slate-300')}`}>
+                                    <div key={i} onClick={() => setActiveImgIdx(i)} className={`w-16 h-16 md:w-full aspect-square border rounded-xl overflow-hidden cursor-pointer transition-all ${activeImgIdx === i ? 'border-[#C5A059] ring-2 ring-[#C5A059]/20' : (isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-slate-100')}`}>
                                         <img src={img} className="w-full h-full object-cover" />
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        <div className="w-full lg:w-[60%] space-y-6 text-right">
+                        <div className="w-full lg:w-1/2 space-y-6 text-right">
                             <div className="space-y-1">
-                                <span className="text-[#C5A059] font-black text-xs uppercase tracking-[0.2em]">{product.brand}</span>
-                                <h1 className="text-3xl md:text-5xl font-black leading-tight tracking-tighter drop-shadow-sm">{product.name}</h1>
-                                <div className={`flex items-center gap-3 font-bold text-[10px] mt-4 ${isDarkMode ? 'text-zinc-500' : 'text-slate-400'}`}>
-                                    <span className="flex items-center gap-1"><i data-lucide="star" className="w-3 h-3 fill-amber-400 text-amber-400"></i> 4.8</span>
-                                    <div className={`h-3 w-[1px] ${isDarkMode ? 'bg-zinc-800' : 'bg-slate-200'}`}></div>
-                                    <span className="flex items-center gap-1"><i data-lucide="message-square" className="w-3 h-3"></i> {product.reviews} دیدگاه</span>
+                                <span className="text-[#C5A059] font-black text-[10px] uppercase tracking-widest">{product.brand}</span>
+                                <h1 className="text-2xl md:text-5xl font-black leading-tight tracking-tighter">{product.name}</h1>
+                                <div className="flex items-center gap-4 text-[10px] font-bold mt-2 opacity-50">
+                                    <span className="flex items-center gap-1"><i data-lucide="star" className="w-3 h-3 text-amber-500 fill-amber-500"></i> ۴.۸</span>
+                                    <span>{product.reviews} دیدگاه</span>
                                 </div>
                             </div>
 
-                            <div className={`p-8 rounded-[2.5rem] border space-y-6 shadow-xl ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-[#FAF9F6] border-slate-200'}`}>
+                            <div className={`p-6 rounded-[2rem] border space-y-6 ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-[#FAF9F6] border-slate-200 shadow-sm'}`}>
                                 <div className="flex justify-between items-end">
                                     <div className="space-y-1">
-                                        {product.oldPrice && <div className="text-rose-500 line-through text-base font-bold opacity-60 decoration-2">{product.oldPrice.toLocaleString()} تومان</div>}
-                                        <div className="text-4xl font-black price-text">{product.price.toLocaleString()} <span className="text-sm font-normal text-current">تومان</span></div>
+                                        {product.oldPrice && <div className="text-rose-500 line-through text-xs font-bold opacity-50">{product.oldPrice.toLocaleString()} تومان</div>}
+                                        <div className="text-3xl font-black price-text">{product.price.toLocaleString()} <span className="text-xs font-normal">تومان</span></div>
                                     </div>
-                                    <div className="text-emerald-500 font-black text-[11px] flex items-center gap-2 bg-emerald-500/10 px-3 py-1.5 rounded-full">
-                                        <i data-lucide="shield-check" className="w-4 h-4"></i> اصالت کالا تضمین شده
+                                    <div className="text-emerald-500 font-bold text-[9px] bg-emerald-500/10 px-3 py-1.5 rounded-full flex items-center gap-1">
+                                        <i data-lucide="shield-check" className="w-3.5 h-3.5"></i> اصالت تضمین شده
                                     </div>
                                 </div>
-                                <button onClick={() => addToCart(product)} className={`w-full py-5 rounded-2xl font-black text-lg transition-all shadow-2xl flex items-center justify-center gap-4 hover:scale-[1.01] active:scale-95 ${isDarkMode ? 'bg-[#C5A059] text-black' : 'bg-[#1A1A1A] text-white hover:bg-black'}`}>
-                                    <i data-lucide="shopping-cart" className="w-5 h-5"></i> افزودن به سبد خرید پرمیوم
+                                <button onClick={() => addToCart(product)} className="w-full py-4 rounded-2xl bg-[#1A1A1A] text-white font-black text-sm flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-xl">
+                                    <i data-lucide="shopping-cart" className="w-4 h-4"></i> افزودن به سبد خرید لوکس
                                 </button>
                             </div>
 
                             <div className={`grid grid-cols-4 gap-2 py-4 border-y ${isDarkMode ? 'border-zinc-800' : 'border-slate-100'}`}>
                                 {["ارسال اکسپرس", "مشاوره تراز اول", "۷ روز مهلت تست", "تضمین قیمت"].map((t, idx) => (
-                                    <div key={idx} className="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${isDarkMode ? 'bg-zinc-800' : 'bg-slate-100'}`}><i data-lucide={["truck", "headphones", "refresh-cw", "award"][idx]} className="w-5 h-5"></i></div>
-                                        <span className="text-[8px] md:text-[9px] font-black">{t}</span>
+                                    <div key={idx} className="flex flex-col items-center gap-2 opacity-40">
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isDarkMode ? 'bg-zinc-800' : 'bg-white shadow-sm'}`}><i data-lucide={["truck", "headphones", "refresh-cw", "award"][idx]} className="w-4 h-4"></i></div>
+                                        <span className="text-[7px] font-black">{t}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
 
-                    <div className={`mt-16 border-t pt-8 ${isDarkMode ? 'border-zinc-800' : 'border-slate-100'}`}>
-                        <div className={`flex gap-10 mb-8 border-b ${isDarkMode ? 'border-zinc-800' : 'border-slate-100'}`}>
-                            <button onClick={() => setActiveTab('desc')} className={`pb-3 text-xs font-black transition-all ${activeTab === 'desc' ? 'product-tab-active' : (isDarkMode ? 'text-zinc-600' : 'text-slate-400')}`}>معرفی تخصصی</button>
-                            <button onClick={() => setActiveTab('spec')} className={`pb-3 text-xs font-black transition-all ${activeTab === 'spec' ? 'product-tab-active' : (isDarkMode ? 'text-zinc-600' : 'text-slate-400')}`}>مشخصات فنی</button>
+                    <div className={`mt-12 border-t pt-8 ${isDarkMode ? 'border-zinc-800' : 'border-slate-100'}`}>
+                        <div className="flex gap-8 mb-6 border-b">
+                            <button onClick={() => setActiveTab('desc')} className={`pb-3 text-[10px] font-black transition-all ${activeTab === 'desc' ? 'product-tab-active' : 'opacity-40'}`}>معرفی تخصصی</button>
+                            <button onClick={() => setActiveTab('spec')} className={`pb-3 text-[10px] font-black transition-all ${activeTab === 'spec' ? 'product-tab-active' : 'opacity-40'}`}>مشخصات فنی</button>
                         </div>
-                        <div className={`max-w-4xl text-right leading-[1.8] text-sm md:text-base ${isDarkMode ? 'text-zinc-400' : 'text-slate-600'}`}>
+                        <div className={`text-right text-xs md:text-sm leading-relaxed ${isDarkMode ? 'text-zinc-400' : 'text-slate-600'}`}>
                             {activeTab === 'desc' ? <p>{product.description}</p> : (
-                                <div className="space-y-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                     {product.specs.map((s, i) => (
-                                        <div key={i} className={`flex justify-between p-4 rounded-xl ${isDarkMode ? 'bg-zinc-900' : 'bg-white shadow-sm'}`}><span className="text-zinc-500 font-bold text-xs">{s.label}</span><span className="font-black text-xs">{s.value}</span></div>
+                                        <div key={i} className={`flex justify-between p-4 rounded-xl ${isDarkMode ? 'bg-zinc-900' : 'bg-white shadow-sm border border-slate-50'}`}><span className="opacity-50">{s.label}</span><span className="font-black">{s.value}</span></div>
                                     ))}
                                 </div>
                             )}
@@ -366,98 +374,70 @@
 
             return (
                 <div className={`min-h-screen transition-all duration-700 ${isDarkMode ? 'bg-[#0A0A0A] text-white' : 'bg-[#FAF9F6] text-[#1A1A1A]'}`}>
-                    {/* پس‌زمینه متحرک ظریف */}
-                    <div className={`liquid-blob w-[100vw] h-[100vw] top-[-30%] left-[-20%] ${isDarkMode ? 'bg-[#C5A059]/10' : 'bg-[#C5A059]/5'}`}></div>
-                    <div className={`liquid-blob w-[80vw] h-[80vw] bottom-[-20%] right-[-10%] ${isDarkMode ? 'bg-rose-900/10' : 'bg-rose-100/20'}`}></div>
+                    <div className={`liquid-blob w-[100vw] h-[100vw] top-[-40%] left-[-20%] ${isDarkMode ? 'bg-[#C5A059]/10' : 'bg-[#C5A059]/5'}`}></div>
+                    <div className={`liquid-blob w-[80vw] h-[80vw] bottom-[-30%] right-[-10%] ${isDarkMode ? 'bg-rose-900/10' : 'bg-rose-100/20'}`}></div>
 
-                    <header className={`sticky top-0 z-[100] w-full border-b transition-all duration-500 glass ${isDarkMode ? 'bg-black/80 border-zinc-900' : 'bg-white/80 border-slate-200'}`}>
-                        <div className="app-wrapper flex items-center justify-between h-24 lg:h-28 px-6 lg:px-10">
-                            <div className="flex items-center gap-6">
-                                <button onClick={() => setIsDarkMode(!isDarkMode)} className={`p-3.5 rounded-full transition-all active:scale-90 ${isDarkMode ? 'bg-zinc-900 hover:bg-zinc-800 text-[#C5A059]' : 'bg-slate-100 hover:bg-slate-200 text-slate-600'}`}>
-                                    {isDarkMode ? <i data-lucide="sun" className="w-5 h-5"></i> : <i data-lucide="moon" className="w-5 h-5"></i>}
-                                </button>
-                                <button onClick={() => setIsCartOpen(true)} className={`relative p-3.5 rounded-full transition-all active:scale-90 ${isDarkMode ? 'bg-zinc-900 hover:bg-zinc-800' : 'bg-slate-100 hover:bg-slate-200'}`}>
-                                    <i data-lucide="shopping-basket" className="w-5 h-5 text-[#C5A059]"></i>
-                                    {cart.length > 0 && <span className="absolute top-0 right-0 bg-[#C5A059] text-black w-5 h-5 rounded-full text-[9px] flex items-center justify-center font-black animate-bounce shadow-lg">{cart.length}</span>}
-                                </button>
-                            </div>
-                            <Logo />
-                            <div className="flex items-center gap-4">
-                                <button onClick={() => setView('admin')} className="text-[10px] font-black opacity-30 hover:opacity-100 transition-opacity uppercase tracking-tighter">Panel</button>
-                                <div className={`h-8 w-[1px] ${isDarkMode ? 'bg-zinc-800' : 'bg-slate-200'}`}></div>
-                                <span className="hidden md:inline text-[9px] font-black opacity-40">COLLECTION 2025</span>
-                            </div>
-                        </div>
-                    </header>
+                    <Header />
 
-                    <div className="app-wrapper" key={view}>
+                    <div className="app-wrapper">
                         {view === 'catalog' ? <CatalogView /> : <ProductDetails product={selectedProduct} />}
                     </div>
 
-                    <div className="fixed bottom-8 right-8 z-[150] ai-btn-float">
-                        <button onClick={() => setIsChatOpen(!isChatOpen)} className={`relative w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl border-4 transition-all hover:scale-110 active:scale-95 ${isDarkMode ? 'bg-white text-black border-zinc-800' : 'bg-[#1A1A1A] text-white border-white'}`}>
-                            <i data-lucide="bot" className="w-8 h-8"></i>
+                    {/* Chat FAB */}
+                    <div className="fixed bottom-6 right-6 z-[150] ai-btn-float">
+                        <button onClick={() => setIsChatOpen(!isChatOpen)} className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all active:scale-95 ${isDarkMode ? 'bg-white text-black' : 'bg-[#1A1A1A] text-white'}`}>
+                            <i data-lucide="sparkles" className="w-6 h-6"></i>
                         </button>
                     </div>
 
                     {isChatOpen && (
-                        <div className={`fixed bottom-28 right-8 z-[200] w-[85vw] max-w-sm h-[30rem] rounded-[2.5rem] border shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 ${isDarkMode ? 'bg-[#0A0A0A] border-zinc-800' : 'bg-white border-slate-200'}`}>
-                            <div className="bg-[#1A1A1A] text-white p-5 flex justify-between items-center border-b border-[#C5A059]/30">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-6 h-6 rounded-full bg-[#C5A059] flex items-center justify-center text-black"><i data-lucide="sparkles" className="w-3 h-3"></i></div>
-                                    <span className="font-black text-[10px] uppercase tracking-widest">Avin AI Assistant</span>
-                                </div>
-                                <button onClick={() => setIsChatOpen(false)} className="hover:rotate-90 transition-transform"><i data-lucide="x" className="w-4 h-4"></i></button>
+                        <div className={`fixed bottom-24 right-4 md:right-10 z-[200] w-[90vw] max-w-sm h-[28rem] rounded-[2.5rem] border shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 ${isDarkMode ? 'bg-[#0A0A0A] border-zinc-800' : 'bg-white border-slate-200'}`}>
+                            <div className="bg-[#1A1A1A] text-white p-5 flex justify-between items-center">
+                                <span className="font-black text-[10px] uppercase tracking-widest">Avin AI Assistant</span>
+                                <button onClick={() => setIsChatOpen(false)}><i data-lucide="x" className="w-4 h-4"></i></button>
                             </div>
-                            <div className="flex-1 p-8 text-center flex flex-col justify-center items-center gap-4 bg-gradient-to-b from-transparent to-[#C5A059]/5">
-                                <i data-lucide="message-circle" className={`w-10 h-10 opacity-10 ${isDarkMode ? 'text-white' : 'text-black'}`}></i>
-                                <p className={`font-bold italic text-[11px] leading-relaxed ${isDarkMode ? 'text-zinc-500' : 'text-slate-400'}`}>دستیار هوشمند آوین در حال تحلیل ۳۰ محصول لوکس برای پیشنهادات خاص به شماست...</p>
-                                <div className="flex gap-1">
-                                    <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full animate-bounce"></div>
-                                    <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full animate-bounce [animation-delay:0.2s]"></div>
-                                    <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full animate-bounce [animation-delay:0.4s]"></div>
-                                </div>
+                            <div className="flex-1 p-8 text-center flex flex-col justify-center items-center gap-4">
+                                <i data-lucide="message-circle" className="w-10 h-10 opacity-10"></i>
+                                <p className="font-bold text-[10px] opacity-40">دستیار هوشمند آوین در حال تحلیل ۳۰ محصول لوکس برای شماست...</p>
                             </div>
                         </div>
                     )}
 
+                    {/* Cart Drawer */}
                     {isCartOpen && (
-                        <div className="fixed inset-0 z-[250] flex justify-start transition-all duration-500">
+                        <div className="fixed inset-0 z-[300] flex justify-end">
                             <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setIsCartOpen(false)}></div>
-                            <div className={`relative w-full max-w-sm h-full p-8 flex flex-col shadow-2xl animate-in slide-in-from-right duration-500 ${isDarkMode ? 'bg-[#0A0A0A] text-white' : 'bg-white text-[#1A1A1A]'}`}>
+                            <div className={`relative w-4/5 max-w-sm h-full p-6 flex flex-col animate-in slide-in-from-left duration-300 ${isDarkMode ? 'bg-[#0A0A0A] text-white' : 'bg-white text-[#1A1A1A]'}`}>
                                 <div className="flex justify-between items-center mb-10">
-                                    <button onClick={() => setIsCartOpen(false)} className="p-2 hover:rotate-90 transition-transform"><i data-lucide="x" className="w-6 h-6"></i></button>
-                                    <h2 className="text-2xl font-black tracking-tighter italic border-b-2 border-[#C5A059] pb-1">BAG</h2>
+                                    <button onClick={() => setIsCartOpen(false)} className="p-2"><i data-lucide="x" className="w-6 h-6"></i></button>
+                                    <h2 className="text-xl font-black italic border-b-2 border-[#C5A059] pb-1 uppercase">Bag</h2>
                                 </div>
-                                <div className="flex-1 overflow-y-auto space-y-5 no-scrollbar">
+                                <div className="flex-1 overflow-y-auto space-y-4 no-scrollbar">
                                     {cart.map((item, i) => (
-                                        <div key={i} className={`flex gap-4 p-4 rounded-2xl items-center border animate-in slide-in-from-bottom-2 ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-[#FAF9F6] border-slate-100'}`}>
-                                            <img src={item.images[0]} className="w-14 h-14 rounded-xl object-cover shadow-md" />
-                                            <div className="text-right flex-1 font-black">
-                                                <div className="text-[11px] mb-0.5">{item.name}</div>
-                                                <div className="price-text text-xs">{item.price.toLocaleString()} تومان</div>
+                                        <div key={i} className={`flex gap-3 p-3 rounded-2xl items-center border ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-[#FAF9F6] border-slate-100'}`}>
+                                            <img src={item.images[0]} className="w-12 h-12 rounded-xl object-cover" />
+                                            <div className="text-right flex-1">
+                                                <div className="text-[10px] font-black mb-0.5">{item.name}</div>
+                                                <div className="price-text text-[10px]">{item.price.toLocaleString()} تومان</div>
                                             </div>
                                         </div>
                                     ))}
-                                    {cart.length === 0 && <div className="h-full flex items-center justify-center opacity-20 font-black italic text-sm">YOUR BAG IS EMPTY</div>}
+                                    {cart.length === 0 && <div className="h-full flex items-center justify-center opacity-30 italic font-black text-sm">YOUR BAG IS EMPTY</div>}
                                 </div>
-                                <div className={`pt-6 border-t mt-6 ${isDarkMode ? 'border-zinc-800' : 'border-slate-100'}`}>
-                                    <div className="flex justify-between mb-6 font-black text-lg">
-                                        <span className="opacity-40 uppercase text-[10px]">Subtotal:</span>
+                                <div className="pt-6 border-t mt-6">
+                                    <div className="flex justify-between mb-4 font-black">
+                                        <span className="opacity-40 text-[10px]">TOTAL:</span>
                                         <span className="price-text">{cart.reduce((a, b) => a + b.price, 0).toLocaleString()} تومان</span>
                                     </div>
-                                    <button className={`w-full py-4 rounded-2xl font-black text-base shadow-xl transition-all hover:scale-[1.02] active:scale-95 ${isDarkMode ? 'bg-[#C5A059] text-black' : 'bg-[#1A1A1A] text-white'}`}>تکمیل سفارش نهایی</button>
+                                    <button className="w-full py-4 rounded-2xl bg-[#C5A059] text-black font-black text-sm shadow-xl active:scale-95 transition-all">تکمیل سفارش نهایی</button>
                                 </div>
                             </div>
                         </div>
                     )}
 
-                    <footer className={`py-16 text-center border-t mt-12 ${isDarkMode ? 'bg-black border-zinc-900' : 'bg-white border-slate-100'}`}>
-                        <div className="app-wrapper px-10 flex flex-col items-center gap-6">
-                            <img src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" className={`h-24 opacity-30 transition-opacity hover:opacity-100 duration-1000 ${isDarkMode ? 'brightness-150' : ''}`} />
-                            <div className="h-px w-20 bg-[#C5A059]/30"></div>
-                            <p className="text-[9px] font-black opacity-30 tracking-[0.8em] uppercase">Avin Premium Beauty Experience 2025</p>
-                        </div>
+                    <footer className={`py-12 text-center border-t mt-12 ${isDarkMode ? 'bg-black border-zinc-900' : 'bg-white border-slate-100'}`}>
+                         <img src="Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png" className="h-14 mx-auto mb-4 opacity-30" />
+                         <p className="text-[8px] font-black opacity-30 tracking-[0.6em] uppercase">Avin Premium Beauty Experience 2025</p>
                     </footer>
                 </div>
             );
