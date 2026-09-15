@@ -3,6 +3,6 @@
   "notes": "🚀 آپدیت بزرگ SinaVPN نسخه ۲.۵:\n• اضافه شدن ۹ استایل و تم رنگی اختصاصی نئون\n• کادر متقارن و هوشمند انتخاب پروفایل‌های اسکن\n• بازطراحی مدرن سیستم سابسکربشن و مدیریت لایسنس\n• ارتقای پایداری پروتکل‌های سینا-استیلث، وارپ، وایرگارد و ماسک",
   "download_url": "https://github.com/sinamp00/sina/releases/download/v2.5.0/SinaVPN-Universal-Release.apk",
   "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.5.0/SinaVPN-arm64-Release.apk",
-  "checksum": "fabb3527f8d5f63849ce8c3c6c8d005a91c86764a0f93942aa0e82fa7bf10c7c",
-  "checksum_arm64": "3978fde3f0bee4af3e9fb26254c18c827c89e2e1359344f4de5954219634abd8"
+  "checksum": "519f053b0200b1a2a891eff6dd82f2318dc40349798cfc5d6c3bd4c3a6f1e828",
+  "checksum_arm64": "22df3dbfa4133bd7c72854ba946078bfba0e772442f2f253244c068d3e84c2b4"
 }
