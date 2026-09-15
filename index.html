@@ -59,13 +59,6 @@
             border-color: rgba(0, 245, 160, 0.35);
             transform: translateY(-3px);
         }
-        .orb-float {
-            animation: orbFloat 4s ease-in-out infinite alternate;
-        }
-        @keyframes orbFloat {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-8px) scale(1.03); }
-        }
         .gradient-text {
             background: linear-gradient(135deg, #00F5A0 0%, #00F5FF 50%, #B388FF 100%);
             -webkit-background-clip: text;
@@ -129,73 +122,10 @@
                 اینترنت آزاد و پرسرعت <br>
                 <span class="gradient-text">نفوذناپذیر در دستان شما</span>
             </h2>
-            <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-light px-2 sm:px-4 mb-8">
-                اپلیکیشن اختصاصی <strong class="text-white font-bold">SinaVPN</strong> با تلفیق تکنیک‌های فرگمنتیشن بسته‌ها، رله‌های بهینه‌سازی‌شده وارپ پلاس، تانل ماسک H2 و رمزنگاری آفلاین ECDSA، پایدارترین ارتباط اینترنت را در سخت‌ترین شرایط فیلترینگ فراهم می‌سازد.
+            <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-light px-2 sm:px-4 mb-2">
+                اپلیکیشن اختصاصی <strong class="text-white font-bold">SinaVPN</strong> با تلفیق تکنیک‌های هوشمند ضد فیلترینگ، رله‌های بهینه‌سازی‌شده، پروتکل اختصاصی سینا و رمزنگاری آفلاین ECDSA، پایدارترین ارتباط اینترنت را در سخت‌ترین شرایط فیلترینگ فراهم می‌سازد.
             </p>
-
-            <!-- Dynamic Interactive Connection Orb -->
-            <div class="flex flex-col items-center justify-center my-4">
-                <div id="hero-orb" class="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-2 border-emeraldBrand/60 flex items-center justify-center p-3 relative orb-float glow-emerald transition-all duration-500">
-                    <div class="w-full h-full rounded-full bg-gradient-to-tr from-emeraldBrand/30 to-cyanNeon/30 backdrop-blur-md flex items-center justify-center border border-white/25">
-                        <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                </div>
-                <span id="orb-label" class="text-xs text-gray-400 mt-3 font-medium">استایل فعال: سبز سایبر زمردی (پیش‌فرض لوگو)</span>
-            </div>
         </div>
-
-        <!-- 9 Interactive Themes Showcase (Works on Touch & Click) -->
-        <section class="w-full max-w-4xl mb-14 sm:mb-18 glass-card rounded-3xl p-5 sm:p-7">
-            <div class="text-center mb-5">
-                <h3 class="text-base sm:text-lg font-bold text-white flex items-center justify-center gap-2">
-                    <span>🎨</span>
-                    <span>انتخاب از میان ۹ استایل نئونی و اختصاصی</span>
-                </h3>
-                <p class="text-xs text-gray-400 mt-1">با لمس هر استایل، رنگ هاله دکمه اتصال برنامه را به صورت زنده تست کنید:</p>
-            </div>
-
-            <!-- Theme Buttons Grid -->
-            <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2">
-                <button onclick="setTheme('#00F5A0', 'سبز سایبر زمردی')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-emeraldBrand flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#00F5A0] shadow-[0_0_10px_#00F5A0]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">زمردی</span>
-                </button>
-                <button onclick="setTheme('#00F5FF', 'نئون سایبر فیروزه‌ای')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyanNeon flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#00F5FF] shadow-[0_0_10px_#00F5FF]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">فیروزه‌ای</span>
-                </button>
-                <button onclick="setTheme('#0091EA', 'آبی یاقوتی رویال')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#0091EA] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#0091EA] shadow-[0_0_10px_#0091EA]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">یاقوتی</span>
-                </button>
-                <button onclick="setTheme('#B388FF', 'بنفش آمیتیست')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#B388FF] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#B388FF] shadow-[0_0_10px_#B388FF]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">آمیتیست</span>
-                </button>
-                <button onclick="setTheme('#FF2A85', 'رز نئونی سان‌ست')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#FF2A85] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#FF2A85] shadow-[0_0_10px_#FF2A85]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">رز نئونی</span>
-                </button>
-                <button onclick="setTheme('#FFB300', 'کهربایی گرم')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#FFB300] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#FFB300] shadow-[0_0_10px_#FFB300]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">کهربایی</span>
-                </button>
-                <button onclick="setTheme('#FFD700', 'طلایی سلطنتی')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#FFD700] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#FFD700] shadow-[0_0_10px_#FFD700]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">طلایی VIP</span>
-                </button>
-                <button onclick="setTheme('#A3E635', 'نئون لایم فسفری')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#A3E635] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#A3E635] shadow-[0_0_10px_#A3E635]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">لایم</span>
-                </button>
-                <button onclick="setTheme('#FF5252', 'قرمز تاکتیکال')" class="p-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#FF5252] flex flex-col items-center gap-1.5 btn-bounce text-center">
-                    <span class="w-5 h-5 rounded-full bg-[#FF5252] shadow-[0_0_10px_#FF5252]"></span>
-                    <span class="text-[10px] text-gray-300 font-medium">تاکتیکال</span>
-                </button>
-            </div>
-        </section>
 
         <!-- Download Cards Section -->
         <section id="download" class="w-full max-w-4xl scroll-mt-20 mb-16 sm:mb-20">
@@ -405,20 +335,5 @@
         </div>
     </footer>
 
-    <!-- Interactive Script for Live Theme Changer on Page -->
-    <script>
-        function setTheme(colorHex, nameFa) {
-            const orb = document.getElementById('hero-orb');
-            const label = document.getElementById('orb-label');
-            if (orb) {
-                orb.style.borderColor = colorHex;
-                orb.style.boxShadow = `0 0 45px -5px ${colorHex}`;
-            }
-            if (label) {
-                label.innerText = `استایل فعال: ${nameFa}`;
-                label.style.color = colorHex;
-            }
-        }
-    </script>
 </body>
 </html>
