@@ -2,8 +2,6 @@
 
 <div dir="rtl">
 
-![SinaVPN Banner](Gemini_Generated_Image_y7wcjoy7wcjoy7wc-fotor-bg-remover-20251219153045.png)
-
 [![Release](https://img.shields.io/github/v/release/sinamp00/sina?color=00F5A0&label=Latest%20Version&style=for-the-badge)](https://github.com/sinamp00/sina/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Android%208.0%2B-00F5FF?style=for-the-badge)](https://github.com/sinamp00/sina)
 [![License Security](https://img.shields.io/badge/Security-ECDSA%20P--256-B388FF?style=for-the-badge)](https://github.com/sinamp00/sina)
