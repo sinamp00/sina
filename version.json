@@ -1,8 +1,8 @@
 {
-  "version": "2.5.1",
-  "notes": "🚀 آپدیت جدید SinaVPN نسخه ۲.۵.۱ (طراحی فوق پیشرفته iOS 27):\n• افزوده شدن بای‌پس هوشمند اپ‌های ایرانی و بانکی (بلوبانک، تجارت، ملت، ملی، اسنپ، تپسی و سامانه‌های دولتی بدون قطعی VPN)\n• کاروسل کارتی سه‌بعدی CoverFlow برای پروتکل‌های ضد فیلتر با انیمیشن‌های کشسان و پاسخ لمسی فیزیکی\n• حذف کامل کادر اسکنر از صفحه و اتوماتیک‌سازی ۱۰۰٪ اسکن هوشمند رادار شبکه در پس‌زمینه\n• حالت تاریکی مطلق اولد (Pure Obsidian OLED) با خطوط ظریف نئونی و کنتراست بی‌نهایت\n• هماهنگی یکدست و بی‌نقص استایل کلیدها، کارت‌ها و المان‌های بصری",
-  "download_url": "https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-Universal-Release.apk",
-  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-arm64-Release.apk",
-  "checksum": "de8694824ce41dc419b9cbb8ad88a0d293db8f381765fdd0409c7b8d1f863a38",
-  "checksum_arm64": "1ee66bad95ab4cf2312bcfa6131ab92669019ba6fc35b25aa9f445645e004660"
+  "version": "2.5.2",
+  "notes": "🚀 آپدیت جدید SinaVPN نسخه ۲.۵.۲ (طراحی مدرن کنترل‌سنتر iOS و هسته اتصال سایبری):\n• ردیزاین کامل و مینیمال دکمه‌های پروتکل به‌صورت نوار سگمنت ۴ کپسوله متقارن بدون نیاز به اسکرول افقی (طراحی شیک iOS Segmented Control)\n• بازطراحی خیره‌کننده و نسل جدید دکمه اتصال در حالت وصل (CONNECTED) با شیدر پلاسمای درخشان، رتیکل راداری چرخان، امواج هارمونیک چندلایه‌ای و نشانگر نئونی پاور\n• بهینه‌سازی صفحه اصلی: مخفی‌سازی کارت بای‌پس داخلی از صفحه اصلی و انتقال آن به بخش تنظیمات و لایسنس، ضمن فعال ماندن ۱۰۰٪ خودکار در پس‌زمینه برای برنامه‌های بانکی، اسنپ و دولتی\n• هماهنگی کامل رنگی با ۹ تم زنده و داینامیک برنامه در هر دو حالت تاریک و روشن",
+  "download_url": "https://github.com/sinamp00/sina/releases/download/v2.5.2/SinaVPN-Universal-Release.apk",
+  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.5.2/SinaVPN-arm64-Release.apk",
+  "checksum": "4efc19297751fdfbc029c2968c63d7bc5211c09d5deeb3c93154015f23ffc9f9",
+  "checksum_arm64": "ed75bc75a8133783b8d92ebaaa800f371ec9665cedb49454e572ab5f038c5cef"
 }
