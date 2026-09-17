@@ -1,8 +1,8 @@
 {
-  "version": "2.6.0",
-  "notes": "🚀 آپدیت جدید SinaVPN نسخه ۲.۶ (طراحی مدرن iOS-Grade):\n• رفع کامل باگ دکمه نصب بروزرسانی و ارتقای مستقیم درون‌برنامه‌ای\n• تصحیح رنگ متون بخش اسکنر و همگام‌سازی کامل با تم فعال برنامه\n• بهینه‌سازی ساختار اسکرول روان (NestedScrollView) و رفع مشکل بازگشت به بالای صفحه و دیالوگ‌ها\n• کادربندی فیکس، منظم و شیک پروتکل‌های ضد فیلتر و کپسول‌های اسکنر\n• پروتکل MASQUE H2 پیش‌فرض و حذف گیمینگ مود جهت پایداری بالا",
-  "download_url": "https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-Universal-Release.apk",
-  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-arm64-Release.apk",
-  "checksum": "e38e59e0159187bd1a11f4e59822195031983a9a0485cd635906d437bf23b777",
-  "checksum_arm64": "5d2e76e1af2375c7e5a7680478ed5b6845e10e79afdadd95a921ab3077286d9f"
+  "version": "2.5.1",
+  "notes": "🚀 آپدیت جدید SinaVPN نسخه ۲.۵.۱ (طراحی فوق پیشرفته iOS 27):\n• افزوده شدن بای‌پس هوشمند اپ‌های ایرانی و بانکی (بلوبانک، تجارت، ملت، ملی، اسنپ، تپسی و سامانه‌های دولتی بدون قطعی VPN)\n• کاروسل کارتی سه‌بعدی CoverFlow برای پروتکل‌های ضد فیلتر با انیمیشن‌های کشسان و پاسخ لمسی فیزیکی\n• حذف کامل کادر اسکنر از صفحه و اتوماتیک‌سازی ۱۰۰٪ اسکن هوشمند رادار شبکه در پس‌زمینه\n• حالت تاریکی مطلق اولد (Pure Obsidian OLED) با خطوط ظریف نئونی و کنتراست بی‌نهایت\n• هماهنگی یکدست و بی‌نقص استایل کلیدها، کارت‌ها و المان‌های بصری",
+  "download_url": "https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-Universal-Release.apk",
+  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-arm64-Release.apk",
+  "checksum": "de8694824ce41dc419b9cbb8ad88a0d293db8f381765fdd0409c7b8d1f863a38",
+  "checksum_arm64": "1ee66bad95ab4cf2312bcfa6131ab92669019ba6fc35b25aa9f445645e004660"
 }
