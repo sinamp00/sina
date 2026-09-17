@@ -1,8 +1,8 @@
 {
-  "version": "2.5.0",
-  "notes": "🚀 آپدیت بزرگ SinaVPN نسخه ۲.۵:\n• اضافه شدن ۹ استایل و تم رنگی اختصاصی نئون\n• کادر متقارن و هوشمند انتخاب پروفایل‌های اسکن\n• بازطراحی مدرن سیستم سابسکربشن و مدیریت لایسنس\n• ارتقای پایداری پروتکل‌های سینا-استیلث، وارپ، وایرگارد و ماسک",
-  "download_url": "https://github.com/sinamp00/sina/releases/download/v2.5.0/SinaVPN-Universal-Release.apk",
-  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.5.0/SinaVPN-arm64-Release.apk",
-  "checksum": "519f053b0200b1a2a891eff6dd82f2318dc40349798cfc5d6c3bd4c3a6f1e828",
-  "checksum_arm64": "22df3dbfa4133bd7c72854ba946078bfba0e772442f2f253244c068d3e84c2b4"
+  "version": "2.6.0",
+  "notes": "🚀 آپدیت بزرگ SinaVPN نسخه ۲.۶ (طراحی مدرن iOS-Grade):\n• انتقال پروتکل MASQUE به پیش‌فرض H2 (HTTP/2 TCP) با فرگمنتیشن ضد فیلترینگ\n• حذف کامل بخش گیمینگ مود جهت سبک‌سازی و سرعت حداکثری\n• کنترل لغزنده کپسولی شناور (iOS Sliding Pill Segmented Control)\n• شیدرهای چرخان راداری ۳۶۰ درجه و امواج ۳ سطحی دکمه اتصال\n• نمودار زنده ترافیک و پالس شبکه (Live Sparkline Waveform)\n• مودال‌های مدرن کشویی از پایین صفحه (iOS Bottom Sheet Modals)\n• هاله‌های نورانی محیطی پس‌زمینه (Ambient Aurora Glow Orbs)",
+  "download_url": "https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-Universal-Release.apk",
+  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-arm64-Release.apk",
+  "checksum": "d2c0bf0a07db62d6771f1da1099014ebf4c2fc228003a8e34336880751b7b1b1",
+  "checksum_arm64": "e04883dc2a986f025a3083a8590f57064ca505dc07b9368ee515a83fbfe1e2ed"
 }
