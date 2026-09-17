@@ -1,8 +1,8 @@
 {
   "version": "2.6.0",
-  "notes": "🚀 آپدیت بزرگ SinaVPN نسخه ۲.۶ (طراحی مدرن iOS-Grade):\n• انتقال پروتکل MASQUE به پیش‌فرض H2 (HTTP/2 TCP) با فرگمنتیشن ضد فیلترینگ\n• حذف کامل بخش گیمینگ مود جهت سبک‌سازی و سرعت حداکثری\n• کنترل لغزنده کپسولی شناور (iOS Sliding Pill Segmented Control)\n• شیدرهای چرخان راداری ۳۶۰ درجه و امواج ۳ سطحی دکمه اتصال\n• نمودار زنده ترافیک و پالس شبکه (Live Sparkline Waveform)\n• مودال‌های مدرن کشویی از پایین صفحه (iOS Bottom Sheet Modals)\n• هاله‌های نورانی محیطی پس‌زمینه (Ambient Aurora Glow Orbs)",
+  "notes": "🚀 آپدیت جدید SinaVPN نسخه ۲.۶ (طراحی مدرن iOS-Grade):\n• رفع کامل باگ دکمه نصب بروزرسانی و ارتقای مستقیم درون‌برنامه‌ای\n• تصحیح رنگ متون بخش اسکنر و همگام‌سازی کامل با تم فعال برنامه\n• بهینه‌سازی ساختار اسکرول روان (NestedScrollView) و رفع مشکل بازگشت به بالای صفحه و دیالوگ‌ها\n• کادربندی فیکس، منظم و شیک پروتکل‌های ضد فیلتر و کپسول‌های اسکنر\n• پروتکل MASQUE H2 پیش‌فرض و حذف گیمینگ مود جهت پایداری بالا",
   "download_url": "https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-Universal-Release.apk",
   "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-arm64-Release.apk",
-  "checksum": "d2c0bf0a07db62d6771f1da1099014ebf4c2fc228003a8e34336880751b7b1b1",
-  "checksum_arm64": "e04883dc2a986f025a3083a8590f57064ca505dc07b9368ee515a83fbfe1e2ed"
+  "checksum": "e38e59e0159187bd1a11f4e59822195031983a9a0485cd635906d437bf23b777",
+  "checksum_arm64": "5d2e76e1af2375c7e5a7680478ed5b6845e10e79afdadd95a921ab3077286d9f"
 }
