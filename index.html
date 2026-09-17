@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>SinaVPN v2.5 | نسل نوین فیلترشکن ضدتحریم و استتار شبکه</title>
-    <meta name="description" content="دانلود رسمی فیلترشکن فوق‌پیشرفته SinaVPN v2.5 برای اندروید با پروتکل سینا-استیلث، رله‌های Anycast پرسرعت وارپ‌پلاس، تانل MASQUE و دور زدن قطعی فیلترینگ.">
-    <meta name="theme-color" content="#030712">
+    <title>SinaVPN v2.6.0 | نسل نوین فیلترشکن ضدتحریم، استتار شبکه و پروتکل‌های مایع</title>
+    <meta name="description" content="دانلود رسمی فیلترشکن فوق‌پیشرفته SinaVPN v2.6.0 برای اندروید با تم سایبر نئولایم، کنترل‌های مایع، تانل MASQUE و رله‌های اختصاصی Anycast برای دور زدن قطعی فیلترینگ.">
+    <meta name="theme-color" content="#08090C">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,24 +15,31 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#e6fff5',
-                            100: '#b3ffe0',
-                            400: '#00f5a0',
-                            500: '#06de99',
-                            600: '#00b87a',
-                            DEFAULT: '#00F5A0'
+                            50: '#f7fee7',
+                            100: '#ecfccb',
+                            300: '#d9f99d',
+                            400: '#D8FF33',
+                            500: '#CCFF00',
+                            600: '#a3e635',
+                            700: '#84cc16',
+                            DEFAULT: '#CCFF00'
                         },
                         cyber: {
+                            lime: '#CCFF00',
+                            limeLight: '#D8FF33',
+                            limeDim: '#99BF00',
+                            teal: '#00FFA3',
                             cyan: '#00F5FF',
                             purple: '#A855F7',
                             amber: '#F59E0B',
                             red: '#EF4444'
                         },
                         obsidian: {
-                            950: '#030712',
-                            900: '#060B18',
-                            800: '#0B132B',
-                            700: '#141E3C'
+                            950: '#08090C',
+                            900: '#0E0F12',
+                            850: '#13151A',
+                            800: '#17191E',
+                            700: '#22262E'
                         }
                     },
                     screens: {
@@ -57,14 +64,17 @@
             font-family: 'JetBrains Mono', monospace;
         }
         body {
-            background-color: #030712;
+            background-color: #08090C;
             color: #F3F4F6;
             overflow-x: hidden;
         }
 
         /* Ambient Cyber Lighting */
-        .neon-glow-emerald {
-            box-shadow: 0 0 45px -8px rgba(0, 245, 160, 0.4);
+        .neon-glow-lime {
+            box-shadow: 0 0 50px -10px rgba(204, 255, 0, 0.45), 0 0 20px -5px rgba(204, 255, 0, 0.25);
+        }
+        .neon-glow-subtle {
+            box-shadow: 0 0 35px -8px rgba(204, 255, 0, 0.2);
         }
         .neon-glow-cyan {
             box-shadow: 0 0 45px -8px rgba(0, 245, 255, 0.3);
@@ -72,20 +82,25 @@
 
         /* Glassmorphic Cards */
         .glass-panel {
-            background: rgba(11, 19, 43, 0.65);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background: rgba(23, 25, 30, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .glass-panel:hover {
-            border-color: rgba(0, 245, 160, 0.35);
+            border-color: rgba(204, 255, 0, 0.35);
             transform: translateY(-3px);
         }
 
+        .glass-card-featured {
+            background: linear-gradient(145deg, rgba(204, 255, 0, 0.05) 0%, rgba(23, 25, 30, 0.85) 100%);
+            border: 1px solid rgba(204, 255, 0, 0.28);
+        }
+
         /* Gradient Texts */
-        .gradient-emerald {
-            background: linear-gradient(135deg, #00F5A0 0%, #00F5FF 55%, #A855F7 100%);
+        .gradient-lime {
+            background: linear-gradient(135deg, #CCFF00 0%, #D8FF33 35%, #00FFA3 70%, #00F5FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -95,41 +110,43 @@
             width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #030712;
+            background: #08090C;
         }
         ::-webkit-scrollbar-thumb {
-            background: #141E3C;
+            background: #17191E;
             border-radius: 3px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #00F5A0;
+            background: #CCFF00;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
 
-    <!-- Interactive Canvas for Cosmic Particle Network -->
+    <!-- Interactive Canvas for Cyber Particle Network -->
     <canvas id="cyber-canvas" class="fixed inset-0 pointer-events-none -z-20 w-full h-full"></canvas>
 
     <!-- Ambient Glowing Orbs in Background -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[320px] sm:w-[650px] h-[320px] sm:h-[450px] bg-brand/12 rounded-full blur-[130px] pointer-events-none -z-10"></div>
-    <div class="fixed bottom-20 right-0 w-[280px] sm:w-[500px] h-[350px] bg-cyber-cyan/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[340px] sm:w-[700px] h-[340px] sm:h-[480px] bg-brand/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-20 right-0 w-[280px] sm:w-[500px] h-[350px] bg-cyber-teal/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
     <!-- Floating Navigation Bar -->
     <nav class="sticky top-3 sm:top-5 z-50 max-w-5xl mx-auto px-4 w-full">
         <div class="glass-panel rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between border-white/10 shadow-2xl bg-obsidian-900/85">
             <!-- Brand & Icon -->
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full p-0.5 bg-gradient-to-tr from-brand via-cyber-cyan to-cyber-purple group-hover:scale-105 transition-transform">
-                    <div class="w-full h-full rounded-full bg-obsidian-950 flex items-center justify-center text-sm sm:text-base">
-                        🛡️
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full p-0.5 bg-gradient-to-tr from-brand via-cyber-teal to-cyber-cyan group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full rounded-full bg-obsidian-950 flex items-center justify-center text-brand font-black text-sm sm:text-base">
+                        <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <div class="flex items-center gap-1.5">
                         <span class="text-white font-black text-base sm:text-lg tracking-tight">Sina</span>
                         <span class="text-brand font-black text-base sm:text-lg tracking-tight">VPN</span>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand/15 text-brand border border-brand/30">v2.5</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand/15 text-brand border border-brand/30">v2.6.0</span>
                     </div>
                     <span class="text-[10px] text-gray-400 font-medium -mt-0.5 hidden xs:block">سپر ضد فیلتر و نفوذناپذیر</span>
                 </div>
@@ -137,6 +154,7 @@
 
             <!-- Navigation Links (Desktop) -->
             <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-gray-300">
+                <a href="#changelog" class="hover:text-brand transition-colors text-brand font-bold">تغییرات ۲.۶.۰</a>
                 <a href="#features" class="hover:text-brand transition-colors">قابلیت‌ها</a>
                 <a href="#protocols" class="hover:text-brand transition-colors">موتورهای اتصال</a>
                 <a href="#download" class="hover:text-brand transition-colors">دانلود مستقیم</a>
@@ -145,10 +163,10 @@
 
             <!-- Action Buttons -->
             <div class="flex items-center gap-2">
-                <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="hidden xs:inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 hover:border-brand/40 hover:text-brand transition-all">
-                    <span>🤖 ربات تلگرام</span>
+                <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="hidden xs:inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 hover:border-brand/40 hover:text-brand transition-all">
+                    <span>ربات تلگرام</span>
                 </a>
-                <a href="#download" class="inline-flex items-center gap-1.5 text-xs font-black px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-brand text-black hover:bg-brand-500 shadow-md transition-all active:scale-95">
+                <a href="#download" class="inline-flex items-center gap-1.5 text-xs font-black px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-brand text-black hover:bg-brand-400 shadow-md transition-all active:scale-95">
                     <span>دانلود مستقیم</span>
                     <span class="text-sm font-bold">↓</span>
                 </a>
@@ -165,28 +183,30 @@
             <!-- Live Shield Status Badge -->
             <div class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-brand/10 border border-brand/30 text-brand text-xs font-bold mb-6 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-brand animate-ping"></span>
-                <span>آپدیت نسخه رسمی v2.5.1 • سازگار با تمامی اپراتورها</span>
+                <span>آپدیت رسمی نسخه ۲.۶.۰ • سازگار با تمامی اپراتورها</span>
             </div>
 
             <!-- Main Giant Heading -->
             <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.28] sm:leading-[1.2] mb-6">
                 اینترنت آزاد و پرسرعت، <br>
-                <span class="gradient-emerald">نفوذناپذیر در دستان شما</span>
+                <span class="gradient-lime">نفوذناپذیر با کنترل‌های مایع</span>
             </h1>
 
             <!-- Subtitle -->
             <p class="text-sm sm:text-base md:text-lg text-gray-300 font-light leading-relaxed mb-8 px-2">
-                اپلیکیشن <strong class="text-white font-bold">SinaVPN</strong> با تلفیق تکنیک‌های نوین تکه‌تکه‌سازی بسته‌ها (DPI Fragmentation)، شبکه Anycast پرسرعت وارپ‌پلاس، تانل مدرن MASQUE و رمزنگاری آفلاین ECDSA، پایدارترین اتصال اینترنت را در سخت‌ترین شرایط فیلترینگ فراهم می‌سازد.
+                اپلیکیشن <strong class="text-white font-bold">SinaVPN v2.6.0</strong> با تلفیق تکنیک‌های نوین تکه‌تکه‌سازی بسته‌ها (DPI Fragmentation)، شبکه Anycast پرسرعت وارپ‌پلاس، تانل مدرن MASQUE، سوایپ روان پروتکل‌ها و رمزنگاری آفلاین ECDSA، پایدارترین و مدرن‌ترین تجربه اتصال را رقم می‌زند.
             </p>
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
-                <a href="#download" class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-brand hover:bg-brand-500 text-black font-extrabold text-sm sm:text-base neon-glow-emerald transition-all active:scale-95">
-                    <span class="text-xl">📥</span>
-                    <span>دانلود مستقیم نسخه جدید v2.5.1</span>
+                <a href="#download" class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-brand hover:bg-brand-400 text-black font-extrabold text-sm sm:text-base neon-glow-lime transition-all active:scale-95">
+                    <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>دانلود مستقیم نسخه جدید v2.6.0</span>
                 </a>
                 <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 hover:border-brand/40 text-white font-bold text-sm sm:text-base transition-all active:scale-95">
-                    <span>🤖 دریافت اکانت تست رایگان</span>
+                    <span>دریافت اکانت تست رایگان</span>
                 </a>
             </div>
 
@@ -197,7 +217,7 @@
                     <div class="text-xs text-gray-400 font-medium mt-0.5">بای‌پس فیلترینگ DPI</div>
                 </div>
                 <div class="glass-panel rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-black text-cyber-cyan font-mono">&lt; 28ms</div>
+                    <div class="text-xl sm:text-2xl font-black text-cyber-teal font-mono">&lt; 25ms</div>
                     <div class="text-xs text-gray-400 font-medium mt-0.5">پینگ بهینه Anycast</div>
                 </div>
                 <div class="glass-panel rounded-2xl p-4 text-center">
@@ -205,11 +225,110 @@
                     <div class="text-xs text-gray-400 font-medium mt-0.5">رمزنگاری آفلاین ECDSA</div>
                 </div>
                 <div class="glass-panel rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-black text-cyber-amber font-mono">۴ موتور</div>
+                    <div class="text-xl sm:text-2xl font-black text-cyber-cyan font-mono">۴ موتور</div>
                     <div class="text-xs text-gray-400 font-medium mt-0.5">پروتکل‌های ضدتحریم</div>
                 </div>
             </div>
 
+        </section>
+
+        <!-- ================= V2.6.0 CHANGELOG SECTION ================= -->
+        <section id="changelog" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">انتشار رسمی ۲.۶.۰</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">تغییرات و نوآوری‌های نسخه ۲.۶.۰</h2>
+                <p class="text-xs sm:text-sm text-gray-400">مروری بر بزرگ‌ترین بازطراحی بصری، کنترل‌های مایع و سیستم آپدیت بی‌مزاحمت</p>
+            </div>
+
+            <div class="glass-panel glass-card-featured rounded-3xl p-6 sm:p-8 mb-6 neon-glow-subtle">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand/15 border border-brand/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-bold text-white mb-1">کنترلگر لمسی مایع (Liquid Drag & Swipe)</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                نوار انتخاب پروتکل با فیزیک الاستیک مایع (Liquid Stretch & Squash)؛ علاوه بر لمس عادی، اکنون می‌توانید نشانگر را با درگ و سوایپ لمسی نرم میان پروتکل‌ها جابجا کنید.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyber-teal/15 border border-cyber-teal/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-cyber-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-bold text-white mb-1">موج تشعشعی هندشیک (Kinetic Handshake Burst)</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                در لحظه تایید اتصال موفق، شوک‌ویو نوری هم‌مرکز ساطع شده و دکمه اتصال با درخشش پررنگ‌تر و شیدرهای بهینه‌شده به وضعیت فعال درمی‌آید.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyber-cyan/15 border border-cyber-cyan/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-bold text-white mb-1">آپدیت هوشمند بدون مزاحمت (Non-Intrusive)</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                حذف پاپ‌آپ‌های مسدودکننده هنگام باز شدن برنامه؛ در صورت انتشار نسخه جدید تنها یک اعلان ملایم در صفحه ظاهر می‌شود و تصمیم به آپدیت کاملاً در اختیار کاربر است.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyber-purple/15 border border-cyber-purple/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-cyber-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-bold text-white mb-1">پالایش بصری اصیل (Zero-Emoji UI)</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                حذف کامل ایموجی‌ها از کلیه منوها، دکمه‌ها و پنجره‌ها و استفاده انحصاری از وکتورهای مونوکروم هماهنگ با خطوط تمیز هیرلاین متریال ۳.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand/15 border border-brand/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-bold text-white mb-1">گراف ترافیک لگاریتمی و شمارنده روان</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                نمودار لحظه‌ای مصرف شبکه بدون افت فریم با مقیاس لگاریتمی تطبیق‌پذیر و افکت متحرک چرخش ارقام (Ticker) برای نمایش پینگ و دیتای ارسالی/دریافتی.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyber-teal/15 border border-cyber-teal/30 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-cyber-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-bold text-white mb-1">کلاستر یکپارچه منوی کاربری و تم‌ها</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                هماهنگی کامل فرم دکمه‌های اکانت، تم، زبان و پالت با تم‌های ۹ گانه اختصاصی، به همراه دکمه شیشه‌ای برجسته بررسی اشتراک VIP در پنل تنظیمات.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- ================= 4 ADVANCED PROTOCOL ENGINES ================= -->
@@ -224,8 +343,10 @@
                 
                 <!-- Protocol 1 -->
                 <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-brand/15 border border-brand/30 flex items-center justify-center text-2xl shrink-0">
-                        🛡️
+                    <div class="w-11 h-11 rounded-xl bg-brand/15 border border-brand/30 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
@@ -240,13 +361,15 @@
 
                 <!-- Protocol 2 -->
                 <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-cyber-cyan/15 border border-cyber-cyan/30 flex items-center justify-center text-2xl shrink-0">
-                        ⚡
+                    <div class="w-11 h-11 rounded-xl bg-cyber-teal/15 border border-cyber-teal/30 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-cyber-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <h3 class="text-base sm:text-lg font-bold text-white">موتور وارپ پلاس (WARP+ Turbo)</h3>
-                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-cyan text-black">کم‌پینگ</span>
+                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-teal text-black">کم‌پینگ</span>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             اتصال فوق‌العاده سریع با رله‌های بهینه‌سازی‌شده Anycast که کوتاه‌ترین مسیر شبکه را انتخاب می‌کنند. مناسب برای گیمینگ آنلاین، تماشای بدون وقفه ویدیوهای یوتیوب با کیفیت 4K و وبگردی پرسرعت.
@@ -256,8 +379,10 @@
 
                 <!-- Protocol 3 -->
                 <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-cyber-purple/15 border border-cyber-purple/30 flex items-center justify-center text-2xl shrink-0">
-                        🔒
+                    <div class="w-11 h-11 rounded-xl bg-cyber-purple/15 border border-cyber-purple/30 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-cyber-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
@@ -272,13 +397,15 @@
 
                 <!-- Protocol 4 -->
                 <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-cyber-amber/15 border border-cyber-amber/30 flex items-center justify-center text-2xl shrink-0">
-                        🌐
+                    <div class="w-11 h-11 rounded-xl bg-cyber-cyan/15 border border-cyber-cyan/30 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-3-9-3m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <h3 class="text-base sm:text-lg font-bold text-white">تانل ماسک (MASQUE HTTP/2)</h3>
-                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-amber text-black">وب</span>
+                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-cyan text-black">وب</span>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             پروتکل نسل بعدی تانلینگ بر بستر پورت‌های استاندارد وب؛ ترافیک را به عنوان ارتباطات امن وب شبیه‌سازی می‌کند تا در شبکه‌های سازمانی و فایروال‌های سخت‌گیرانه مسدود نشود.
@@ -293,35 +420,39 @@
         <section id="download" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">مرکز دانلود مستقیم</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">دانلود مستقیم اپلیکیشن SinaVPN v2.5.1</h2>
-                <p class="text-xs sm:text-sm text-gray-400">لینک‌های دانلود روی سرورهای ابری گیت‌هاب بدون نیاز به فیلترشکن</p>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">دانلود مستقیم اپلیکیشن SinaVPN v2.6.0</h2>
+                <p class="text-xs sm:text-sm text-gray-400">لینک‌های مستقیم و پرسرعت روی سرورهای ابری گیت‌هاب بدون نیاز به فیلترشکن</p>
             </div>
 
-            <!-- Two Download Cards (Mobile-first stack) -->
+            <!-- Two Download Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-6">
                 
                 <!-- 1. Universal Package -->
-                <div class="glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-brand/40 neon-glow-emerald relative overflow-hidden">
+                <div class="glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-brand/40 neon-glow-lime relative overflow-hidden">
                     <div class="absolute top-3.5 left-3.5 bg-brand text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
                         پیشنهادی برای ۱۰۰٪ گوشی‌ها
                     </div>
                     <div>
                         <div class="flex items-center gap-3.5 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand/20 flex items-center justify-center text-3xl">📱</div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand/20 flex items-center justify-center text-brand">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                            </div>
                             <div>
                                 <h3 class="text-lg sm:text-xl font-extrabold text-white">نسخه جامع (Universal APK)</h3>
                                 <p class="text-xs text-gray-400">سازگار با تمامی مدل‌ها، برندها و پردازنده‌ها</p>
                             </div>
                         </div>
 
-                        <div class="bg-black/35 rounded-2xl p-4 text-xs text-gray-300 space-y-2.5 mb-6 border border-white/5">
+                        <div class="bg-black/40 rounded-2xl p-4 text-xs text-gray-300 space-y-2.5 mb-6 border border-white/5">
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">ورژن:</span>
-                                <span class="text-brand font-bold font-mono">v2.5.1 (Build 32)</span>
+                                <span class="text-brand font-bold font-mono">v2.6.0 (Build 34)</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">حجم دانلود:</span>
-                                <span class="font-mono text-white font-bold">۲۷.۳ مگابایت</span>
+                                <span class="font-mono text-white font-bold">۲۷.۴ مگابایت</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">سیستم‌عامل:</span>
@@ -335,12 +466,12 @@
                     </div>
 
                     <div class="space-y-2.5">
-                        <a href="https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-Universal-Release.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-brand hover:bg-brand-500 text-black font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
-                            <span>دانلود نسخه Universal (۲۷ MB)</span>
+                        <a href="https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-Universal.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-brand hover:bg-brand-400 text-black font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
+                            <span>دانلود نسخه Universal (۲۷.۴ MB)</span>
                             <span class="text-lg font-black">↓</span>
                         </a>
-                        <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-Universal-Release.apk', 'لینک نسخه Universal کپی شد!')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all">
-                            <span>📋 کپی لینک مستقیم دانلود</span>
+                        <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-Universal.apk', 'لینک دانلود Universal کپی شد!')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all">
+                            <span>کپی لینک دانلود مستقیم</span>
                         </button>
                     </div>
                 </div>
@@ -349,21 +480,25 @@
                 <div class="glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-3.5 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-cyber-cyan/20 flex items-center justify-center text-3xl">⚡</div>
+                            <div class="w-12 h-12 rounded-2xl bg-cyber-teal/20 flex items-center justify-center text-cyber-teal">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
                             <div>
                                 <h3 class="text-lg sm:text-xl font-extrabold text-white">نسخه ۶۴ بیتی (arm64-v8a APK)</h3>
                                 <p class="text-xs text-gray-400">فوق‌العاده کم‌حجم، مخصوص گوشی‌های مدرن</p>
                             </div>
                         </div>
 
-                        <div class="bg-black/35 rounded-2xl p-4 text-xs text-gray-300 space-y-2.5 mb-6 border border-white/5">
+                        <div class="bg-black/40 rounded-2xl p-4 text-xs text-gray-300 space-y-2.5 mb-6 border border-white/5">
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">ورژن:</span>
-                                <span class="text-cyber-cyan font-bold font-mono">v2.5.1 (Build 32)</span>
+                                <span class="text-cyber-teal font-bold font-mono">v2.6.0 (Build 34)</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">حجم دانلود:</span>
-                                <span class="font-mono text-white font-bold">۱۱.۰ مگابایت (کم‌حجم)</span>
+                                <span class="font-mono text-white font-bold">۱۱.۰ مگابایت (فوق‌العاده سبک)</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">سیستم‌عامل:</span>
@@ -377,12 +512,12 @@
                     </div>
 
                     <div class="space-y-2.5">
-                        <a href="https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-arm64-Release.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-cyber-cyan/60 text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
-                            <span>دانلود نسخه arm64 (۱۱ MB)</span>
+                        <a href="https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-arm64.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-cyber-teal/60 text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
+                            <span>دانلود نسخه arm64 (۱۱.۰ MB)</span>
                             <span class="text-lg font-black">↓</span>
                         </a>
-                        <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v2.5.1/SinaVPN-arm64-Release.apk', 'لینک نسخه arm64 کپی شد!')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all">
-                            <span>📋 کپی لینک مستقیم دانلود</span>
+                        <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-arm64.apk', 'لینک دانلود arm64 کپی شد!')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all">
+                            <span>کپی لینک دانلود مستقیم</span>
                         </button>
                     </div>
                 </div>
@@ -392,9 +527,9 @@
             <!-- In-App Updater Live Banner -->
             <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-gray-300">
                 <div class="flex items-center gap-3">
-                    <span class="text-2xl">🔄</span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand shrink-0 animate-pulse"></span>
                     <p class="leading-relaxed">
-                        <strong class="text-white">سیستم آپدیت درون‌برنامه‌ای خودکار:</strong> این نسخه مستقیماً به مخزن گیت‌هاب متصل است و کلیه نسخه‌های آینده درون خود اپلیکیشن به صورت اتوماتیک و بدون نیاز به فیلترشکن قابل دریافت خواهند بود.
+                        <strong class="text-white">سیستم آپدیت هوشمند و بدون مزاحمت:</strong> این اپلیکیشن مستقیماً به مخزن گیت‌هاب متصل است و تمامی نسخه‌های آینده بدون هیچ‌گونه پاپ‌آپ مزاحم، در پس‌زمینه بررسی شده و با یک کلیک در منوی حساب کاربری نصب می‌شوند.
                     </p>
                 </div>
                 <a href="https://raw.githubusercontent.com/sinamp00/sina/main/version.json" target="_blank" class="text-brand font-mono hover:underline shrink-0 text-left">
@@ -412,49 +547,42 @@
                 <p class="text-xs sm:text-sm text-gray-400">تفاوت استانداردهای مهندسی SinaVPN در برابر فیلترشکن‌های رایج</p>
             </div>
 
-            <!-- Comparison Cards (Mobile & Desktop Clean View) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
-                    <div class="text-2xl mb-2">⚡</div>
                     <h3 class="text-sm font-bold text-white mb-1.5">بای‌پس فیلترینگ شدید</h3>
                     <p class="text-xs text-brand font-bold mb-2">✓ ۴ موتور هوشمند ضدتحریم</p>
                     <p class="text-xs text-gray-400 leading-relaxed">اتصال پایدار حتی در ساعات اوج محدودیت و اینترنت ملی با ترکیب فرگمنت و پروتکل‌های چندگانه.</p>
                 </div>
 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
-                    <div class="text-2xl mb-2">🧩</div>
                     <h3 class="text-sm font-bold text-white mb-1.5">فرگمنتیشن بسته‌ها (DPI)</h3>
                     <p class="text-xs text-brand font-bold mb-2">✓ بسته‌های ۱۶ الی ۳۲ بایتی</p>
                     <p class="text-xs text-gray-400 leading-relaxed">خرد کردن بسته‌های دیتا همراه با نویز فیک جهت نامفهوم‌سازی ترافیک برای سامانه‌های فیلترینگ هوشمند.</p>
                 </div>
 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
-                    <div class="text-2xl mb-2">🔄</div>
                     <h3 class="text-sm font-bold text-white mb-1.5">آپدیت درون‌برنامه‌ای</h3>
                     <p class="text-xs text-brand font-bold mb-2">✓ بدون نیاز به فیلترشکن</p>
-                    <p class="text-xs text-gray-400 leading-relaxed">به‌روزرسانی مستقیم از سرورهای جهانی گیت‌هاب تنها با زدن یک کلید در تنظیمات برنامه.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">به‌روزرسانی مستقیم از سرورهای جهانی گیت‌هاب تنها با زدن یک کلیک در تنظیمات برنامه بدون مزاحمت.</p>
                 </div>
 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
-                    <div class="text-2xl mb-2">🎮</div>
                     <h3 class="text-sm font-bold text-white mb-1.5">پینگ پایین برای گیم و تماس</h3>
                     <p class="text-xs text-brand font-bold mb-2">✓ پینگ ۲۵ms و صفر درصد پکت‌لاس</p>
                     <p class="text-xs text-gray-400 leading-relaxed">مسیردهی اختصاصی Anycast جهت پایداری در تماس‌های صوتی تلگرام و واتساپ و بازی‌های آنلاین.</p>
                 </div>
 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
-                    <div class="text-2xl mb-2">🔒</div>
                     <h3 class="text-sm font-bold text-white mb-1.5">حفظ حریم خصوصی (Zero-Log)</h3>
                     <p class="text-xs text-brand font-bold mb-2">✓ رمزنگاری آفلاین ECDSA P-256</p>
                     <p class="text-xs text-gray-400 leading-relaxed">عدم ذخیره هرگونه لاگ یا اطلاعات کاربری و بدون نیاز به ثبت‌نام یا وارد کردن ایمیل و شماره تلفن.</p>
                 </div>
 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
-                    <div class="text-2xl mb-2">🎨</div>
-                    <h3 class="text-sm font-bold text-white mb-1.5">رابط کاربری مدرن متریال ۳</h3>
-                    <p class="text-xs text-brand font-bold mb-2">✓ ۹ تم نئونی و افکت شیشه‌ای</p>
-                    <p class="text-xs text-gray-400 leading-relaxed">طراحی مینیمال، روان و با مصرف ناچیز رم و باتری همراه با انیمیشن‌های زنده و شیک.</p>
+                    <h3 class="text-sm font-bold text-white mb-1.5">رابط کاربری مدرن مایع</h3>
+                    <p class="text-xs text-brand font-bold mb-2">✓ کنترل‌های سوایپ و شیشه‌ای</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">طراحی مینیمال، روان و با مصرف ناچیز رم و باتری همراه با انیمیشن‌های زنده و شیک بدون خطوط زائد.</p>
                 </div>
 
             </div>
@@ -471,8 +599,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 
                 <div class="glass-panel rounded-3xl p-6 text-center flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-2xl bg-brand/15 text-brand text-lg font-black flex items-center justify-center mb-3 border border-brand/30">
-                        ۱
+                    <div class="w-12 h-12 rounded-2xl bg-brand/15 text-brand text-lg font-black flex items-center justify-center mb-3 border border-brand/30 font-mono">
+                        1
                     </div>
                     <h3 class="text-sm font-bold text-white mb-1.5">دانلود فایل نصبی APK</h3>
                     <p class="text-xs text-gray-400 leading-relaxed">
@@ -481,8 +609,8 @@
                 </div>
 
                 <div class="glass-panel rounded-3xl p-6 text-center flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-2xl bg-cyber-cyan/15 text-cyber-cyan text-lg font-black flex items-center justify-center mb-3 border border-cyber-cyan/30">
-                        ۲
+                    <div class="w-12 h-12 rounded-2xl bg-cyber-teal/15 text-cyber-teal text-lg font-black flex items-center justify-center mb-3 border border-cyber-teal/30 font-mono">
+                        2
                     </div>
                     <h3 class="text-sm font-bold text-white mb-1.5">تایید مجوز نصب</h3>
                     <p class="text-xs text-gray-400 leading-relaxed">
@@ -491,8 +619,8 @@
                 </div>
 
                 <div class="glass-panel rounded-3xl p-6 text-center flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-2xl bg-cyber-purple/15 text-cyber-purple text-lg font-black flex items-center justify-center mb-3 border border-cyber-purple/30">
-                        ۳
+                    <div class="w-12 h-12 rounded-2xl bg-cyber-cyan/15 text-cyber-cyan text-lg font-black flex items-center justify-center mb-3 border border-cyber-cyan/30 font-mono">
+                        3
                     </div>
                     <h3 class="text-sm font-bold text-white mb-1.5">اتصال با یک لمس</h3>
                     <p class="text-xs text-gray-400 leading-relaxed">
@@ -505,15 +633,14 @@
 
         <!-- ================= TELEGRAM VIP BOT CARD ================= -->
         <section class="py-10">
-            <div class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden border-cyber-cyan/40 neon-glow-cyan text-center flex flex-col items-center">
-                <span class="text-4xl sm:text-5xl mb-3 inline-block">🤖</span>
-                <span class="text-xs font-bold text-cyber-cyan uppercase tracking-wider bg-cyber-cyan/10 px-3 py-1 rounded-full border border-cyber-cyan/30 mb-2">ربات رسمی تلگرام</span>
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden border-brand/30 neon-glow-lime text-center flex flex-col items-center">
+                <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3.5 py-1 rounded-full border border-brand/30 mb-3">پشتیبانی و اشتراک VIP</span>
                 <h2 class="text-xl sm:text-3xl font-black text-white mb-2">دریافت اکانت تست رایگان و اشتراک VIP</h2>
                 <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto mb-6 leading-relaxed">
                     برای دریافت کد لایسنس تست رایگان، استعلام وضعیت اشتراک، خرید اشتراک‌های پرسرعت بدون قطعی و پشتیبانی ۲۴ ساعته، به ربات هوشمند تلگرام متصل شوید.
                 </p>
-                <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-gradient-to-r from-brand to-cyber-cyan text-black font-black text-sm hover:opacity-95 transition-all active:scale-95 shadow-xl text-center">
-                    🚀 شروع گفتگو با ربات (@Sina_mp_VPNbot)
+                <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-gradient-to-r from-brand to-cyber-teal text-black font-black text-sm hover:opacity-95 transition-all active:scale-95 shadow-xl text-center">
+                    شروع گفتگو با ربات تلگرام (@Sina_mp_VPNbot)
                 </a>
             </div>
         </section>
@@ -531,11 +658,11 @@
                 <!-- FAQ Item 1 -->
                 <div class="glass-panel rounded-2xl border-white/10 overflow-hidden">
                     <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-right flex items-center justify-between text-xs sm:text-sm font-bold text-white hover:text-brand transition-colors">
-                        <span>آیا برنامه روی همراه اول، ایرانسل و رایتل متصل می‌شود؟</span>
+                        <span>آیا نسخه ۲.۶.۰ روی همراه اول، ایرانسل و رایتل متصل می‌شود؟</span>
                         <span class="text-brand text-base transform transition-transform duration-200">▾</span>
                     </button>
                     <div class="hidden px-4 sm:px-5 pb-4 sm:pb-5 text-xs text-gray-300 leading-relaxed border-t border-white/5 pt-3">
-                        بله، الگوریتم‌های هوشمند اسکن در نسخه ۲.۵ (به ویژه پروفایل آیرونکلاد) رله‌های اختصاصی و تمیز Anycast را متناسب با تک‌تک اپراتورهای موبایل و اینترنت‌های خانگی شناسایی کرده و اتصال بدون اختلال برقرار می‌سازند.
+                        بله، الگوریتم‌های هوشمند اسکن در نسخه ۲.۶.۰ رله‌های اختصاصی و تمیز Anycast را متناسب با تک‌تک اپراتورهای موبایل و اینترنت‌های خانگی شناسایی کرده و اتصال بدون اختلال برقرار می‌سازند.
                     </div>
                 </div>
 
@@ -546,7 +673,7 @@
                         <span class="text-brand text-base transform transition-transform duration-200">▾</span>
                     </button>
                     <div class="hidden px-4 sm:px-5 pb-4 sm:pb-5 text-xs text-gray-300 leading-relaxed border-t border-white/5 pt-3">
-                        نسخه Universal سازگار با تمامی مدل‌ها و پردازنده‌های اندروید است و بدون دردسر روی ۱۰۰٪ گوشی‌ها نصب می‌شود. نسخه arm64 مخصوص گوشی‌های جدیدتر ۶۴ بیتی است که حجم دانلود آن سبک‌تر (تنها ۱۱ مگابایت) بوده و بهینه‌ترین مصرف باتری را دارد.
+                        نسخه Universal سازگار با تمامی مدل‌ها و پردازنده‌های اندروید است و بدون دردسر روی ۱۰۰٪ گوشی‌ها نصب می‌شود. نسخه arm64 مخصوص گوشی‌های جدیدتر ۶۴ بیتی است که حجم دانلود آن سبک‌تر (تنها ۱۱.۰ مگابایت) بوده و بهینه‌ترین مصرف باتری را دارد.
                     </div>
                 </div>
 
@@ -578,18 +705,18 @@
     </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="w-full border-t border-white/10 bg-[#03060E] py-8 sm:py-10">
+    <footer class="w-full border-t border-white/10 bg-[#08090C] py-8 sm:py-10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 text-center sm:text-right">
             
             <div class="flex items-center justify-center gap-2.5">
-                <span class="text-lg">🛡️</span>
+                <span class="w-2 h-2 rounded-full bg-brand"></span>
                 <span>پروژه اختصاصی <strong>SinaVPN</strong> &copy; 2026 — اینترنت آزاد برای همگان</span>
             </div>
 
             <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
                 <a href="https://github.com/sinamp00/sina" target="_blank" class="hover:text-brand transition-colors">مخزن گیت‌هاب</a>
                 <span class="text-white/20">•</span>
-                <a href="https://github.com/sinamp00/sina/releases/tag/v2.5.1" target="_blank" class="hover:text-brand transition-colors">لیست رلیزها</a>
+                <a href="https://github.com/sinamp00/sina/releases/tag/v2.6.0" target="_blank" class="hover:text-brand transition-colors">لیست رلیزها</a>
                 <span class="text-white/20">•</span>
                 <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="hover:text-brand transition-colors">ربات تلگرام</a>
             </div>
@@ -599,13 +726,15 @@
 
     <!-- Toast Notification for Copy -->
     <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2.5 rounded-xl bg-brand text-black font-extrabold text-xs shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center gap-2">
-        <span>✓</span>
+        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
         <span id="toast-msg">کپی شد!</span>
     </div>
 
     <!-- Scripts -->
     <script>
-        // 1. Lightweight Canvas Particle Network
+        // 1. Lightweight Canvas Particle Network (Neo-Lime Theme)
         (function() {
             const canvas = document.getElementById('cyber-canvas');
             if (!canvas) return;
@@ -628,7 +757,7 @@
                     vx: (Math.random() - 0.5) * 0.35,
                     vy: (Math.random() - 0.5) * 0.35,
                     size: Math.random() * 1.8 + 1,
-                    color: Math.random() > 0.5 ? '#00F5A0' : '#00F5FF'
+                    color: Math.random() > 0.5 ? '#CCFF00' : '#00FFA3'
                 });
             }
 
@@ -721,4 +850,3 @@
 
 </body>
 </html>
-
