@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>SinaVPN v2.6.0 | نسل نوین فیلترشکن ضدتحریم، استتار شبکه و پروتکل‌های مایع</title>
-    <meta name="description" content="دانلود رسمی فیلترشکن فوق‌پیشرفته SinaVPN v2.6.0 برای اندروید با تم سایبر نئولایم، کنترل‌های مایع، تانل MASQUE و رله‌های اختصاصی Anycast برای دور زدن قطعی فیلترینگ.">
+    <title>SinaVPN v3.0.0 | نسل نوین فیلترشکن ضدتحریم، استتار شبکه و پروتکل‌های مایع</title>
+    <meta name="description" content="دانلود رسمی فیلترشکن فوق‌پیشرفته SinaVPN v3.0.0 برای اندروید با تم سایبر نئولایم، کنترل‌های مایع، تانل MASQUE و رله‌های اختصاصی Anycast برای دور زدن قطعی فیلترینگ.">
     <meta name="theme-color" content="#08090C">
 
     <!-- Tailwind CSS CDN -->
@@ -18,16 +18,16 @@
                             50: '#f7fee7',
                             100: '#ecfccb',
                             300: '#d9f99d',
-                            400: '#D8FF33',
-                            500: '#CCFF00',
+                            400: '#00FFA3',
+                            500: '#00F5A0',
                             600: '#a3e635',
                             700: '#84cc16',
-                            DEFAULT: '#CCFF00'
+                            DEFAULT: '#00F5A0'
                         },
                         cyber: {
-                            lime: '#CCFF00',
-                            limeLight: '#D8FF33',
-                            limeDim: '#99BF00',
+                            lime: '#00F5A0',
+                            limeLight: '#00FFA3',
+                            limeDim: '#06DE99',
                             teal: '#00FFA3',
                             cyan: '#00F5FF',
                             purple: '#A855F7',
@@ -100,7 +100,7 @@
 
         /* Gradient Texts */
         .gradient-lime {
-            background: linear-gradient(135deg, #CCFF00 0%, #D8FF33 35%, #00FFA3 70%, #00F5FF 100%);
+            background: linear-gradient(135deg, #00F5A0 0%, #00FFA3 35%, #00FFA3 70%, #00F5FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -117,7 +117,7 @@
             border-radius: 3px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #CCFF00;
+            background: #00F5A0;
         }
     </style>
 </head>
@@ -146,7 +146,7 @@
                     <div class="flex items-center gap-1.5">
                         <span class="text-white font-black text-base sm:text-lg tracking-tight">Sina</span>
                         <span class="text-brand font-black text-base sm:text-lg tracking-tight">VPN</span>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand/15 text-brand border border-brand/30">v2.6.0</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand/15 text-brand border border-brand/30">v3.0.0</span>
                     </div>
                     <span class="text-[10px] text-gray-400 font-medium -mt-0.5 hidden xs:block">سپر ضد فیلتر و نفوذناپذیر</span>
                 </div>
@@ -154,9 +154,11 @@
 
             <!-- Navigation Links (Desktop) -->
             <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-gray-300">
-                <a href="#changelog" class="hover:text-brand transition-colors text-brand font-bold">تغییرات ۲.۶.۰</a>
+                <a href="#changelog" class="hover:text-brand transition-colors text-brand font-bold">تغییرات ۳.۰.۰</a>
                 <a href="#features" class="hover:text-brand transition-colors">قابلیت‌ها</a>
                 <a href="#protocols" class="hover:text-brand transition-colors">موتورهای اتصال</a>
+                <a href="#themes" class="hover:text-brand transition-colors">پوسته‌ها</a>
+                <a href="#split-tunnel" class="hover:text-brand transition-colors">تفکیک برنامه‌ها</a>
                 <a href="#download" class="hover:text-brand transition-colors">دانلود مستقیم</a>
                 <a href="#faq" class="hover:text-brand transition-colors">راهنما و سوالات</a>
             </div>
@@ -183,7 +185,7 @@
             <!-- Live Shield Status Badge -->
             <div class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-brand/10 border border-brand/30 text-brand text-xs font-bold mb-6 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-brand animate-ping"></span>
-                <span>آپدیت رسمی نسخه ۲.۶.۰ • سازگار با تمامی اپراتورها</span>
+                <span>آپدیت رسمی نسخه ۳.۰.۰ • سازگار با تمامی اپراتورها</span>
             </div>
 
             <!-- Main Giant Heading -->
@@ -194,7 +196,7 @@
 
             <!-- Subtitle -->
             <p class="text-sm sm:text-base md:text-lg text-gray-300 font-light leading-relaxed mb-8 px-2">
-                اپلیکیشن <strong class="text-white font-bold">SinaVPN v2.6.0</strong> با تلفیق تکنیک‌های نوین تکه‌تکه‌سازی بسته‌ها (DPI Fragmentation)، شبکه Anycast پرسرعت وارپ‌پلاس، تانل مدرن MASQUE، سوایپ روان پروتکل‌ها و رمزنگاری آفلاین ECDSA، پایدارترین و مدرن‌ترین تجربه اتصال را رقم می‌زند.
+                اپلیکیشن <strong class="text-white font-bold">SinaVPN v3.0.0</strong> با ادغام ۶ موتور اتصال قدرتمند ضدسانسور، قابلیت تفکیک ترافیک برنامه‌ها (Split Tunneling)، تکه‌تکه‌سازی بسته‌ها (DPI Fragmentation)، شبکه رله‌های Anycast کلودفلر، پالت ۱۵ رنگ اصیل و رمزنگاری آفلاین ECDSA P-256، پایدارترین و مدرن‌ترین تجربه اتصال آزاد را رقم می‌زند.
             </p>
 
             <!-- CTA Buttons -->
@@ -203,7 +205,7 @@
                     <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    <span>دانلود مستقیم نسخه جدید v2.6.0</span>
+                    <span>دانلود مستقیم نسخه جدید v3.0.0</span>
                 </a>
                 <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 hover:border-brand/40 text-white font-bold text-sm sm:text-base transition-all active:scale-95">
                     <span>دریافت اکانت تست رایگان</span>
@@ -225,7 +227,7 @@
                     <div class="text-xs text-gray-400 font-medium mt-0.5">رمزنگاری آفلاین ECDSA</div>
                 </div>
                 <div class="glass-panel rounded-2xl p-4 text-center">
-                    <div class="text-xl sm:text-2xl font-black text-cyber-cyan font-mono">۴ موتور</div>
+                    <div class="text-xl sm:text-2xl font-black text-cyber-cyan font-mono">۶ موتور</div>
                     <div class="text-xs text-gray-400 font-medium mt-0.5">پروتکل‌های ضدتحریم</div>
                 </div>
             </div>
@@ -235,9 +237,9 @@
         <!-- ================= V2.6.0 CHANGELOG SECTION ================= -->
         <section id="changelog" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">انتشار رسمی ۲.۶.۰</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">تغییرات و نوآوری‌های نسخه ۲.۶.۰</h2>
-                <p class="text-xs sm:text-sm text-gray-400">مروری بر بزرگ‌ترین بازطراحی بصری، کنترل‌های مایع و سیستم آپدیت بی‌مزاحمت</p>
+                <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">انتشار رسمی ۳.۰.۰</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">تغییرات و نوآوری‌های نسخه ۳.۰.۰</h2>
+                <p class="text-xs sm:text-sm text-gray-400">مروری بر معماری نوین یونیورسال، تفکیک برنامه‌ها، ۶ پروتکل اتصال و ۱۵ پوسته رنگی اصیل</p>
             </div>
 
             <div class="glass-panel glass-card-featured rounded-3xl p-6 sm:p-8 mb-6 neon-glow-subtle">
@@ -335,92 +337,219 @@
         <section id="protocols" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">هسته هوشمند</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">۴ موتور قدرتمند ضد فیلتر و استتار ترافیک</h2>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">۶ موتور قدرتمند ضد فیلتر و استتار ترافیک</h2>
                 <p class="text-xs sm:text-sm text-gray-400">انعطاف‌پذیری حداکثری برای اتصال در شرایط مختلف اپراتورها</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                 
-                <!-- Protocol 1 -->
-                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-brand/15 border border-brand/30 flex items-center justify-center shrink-0">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                    </div>
+                <!-- Protocol 1: Sina-Stealth -->
+                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <h3 class="text-base sm:text-lg font-bold text-white">پروتکل اختصاصی سینا (Sina-Stealth)</h3>
-                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-brand text-black">ویژه</span>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-11 h-11 rounded-xl bg-brand/15 border border-brand/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-brand text-black">پروتکل اختصاصی</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-2">استتار سینا (Sina-Stealth)</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            تکنولوژی انحصاری فرگمنتیشن بسته‌ها (Packet Fragmentation) و تزریق نویز هدفمند؛ بسته‌های دیتا به قطعات کوچک ۱۶ الی ۳۲ بایتی تقسیم شده تا سیستم‌های بازرسی عمیق بسته‌ها (DPI) نتوانند ترافیک را مسدود کنند.
+                            تکنولوژی انحصاری فرگمنتیشن ۱۶ تا ۳۲ بایتی بسته‌ها همراه با نویز فیک هدفمند؛ مقاوم در برابر کلیه ابزارهای بازرسی عمیق بسته‌ها (DPI) در سخت‌ترین فایروال‌ها.
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>نوع: فرگمنت پکت</span>
+                        <span class="text-brand font-mono font-bold">DPI Bypass</span>
                     </div>
                 </div>
 
-                <!-- Protocol 2 -->
-                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-cyber-teal/15 border border-cyber-teal/30 flex items-center justify-center shrink-0">
-                        <svg class="w-6 h-6 text-cyber-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
+                <!-- Protocol 2: Dual WARP / Gool -->
+                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <h3 class="text-base sm:text-lg font-bold text-white">موتور وارپ پلاس (WARP+ Turbo)</h3>
-                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-teal text-black">کم‌پینگ</span>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-teal/15 border border-cyber-teal/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-cyber-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-cyber-teal text-black">کم‌ترین پینگ</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-2">وارپ دوگانه (Dual WARP / Gool)</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            اتصال فوق‌العاده سریع با رله‌های بهینه‌سازی‌شده Anycast که کوتاه‌ترین مسیر شبکه را انتخاب می‌کنند. مناسب برای گیمینگ آنلاین، تماشای بدون وقفه ویدیوهای یوتیوب با کیفیت 4K و وبگردی پرسرعت.
+                            اتصال فوق‌سریع با رله‌های بهینه‌سازی‌شده Anycast که کوتاه‌ترین مسیر شبکه را انتخاب می‌کنند. مناسب برای گیمینگ آنلاین، تماشای بدون وقفه ویدیوهای 4K و وبگردی پرشتاب.
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>پینگ: زیر ۲۵ میلی‌ثانیه</span>
+                        <span class="text-cyber-teal font-mono font-bold">Cloudflare Anycast</span>
                     </div>
                 </div>
 
-                <!-- Protocol 3 -->
-                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-cyber-purple/15 border border-cyber-purple/30 flex items-center justify-center shrink-0">
-                        <svg class="w-6 h-6 text-cyber-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
+                <!-- Protocol 3: WireGuard Pro -->
+                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <h3 class="text-base sm:text-lg font-bold text-white">وایرگارد پرو (WireGuard Pro Core)</h3>
-                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-purple text-white">سبک</span>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-purple/15 border border-cyber-purple/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-cyber-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-cyber-purple text-white">پایداری بالا</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-2">وایرگارد پنهان‌کار (WireGuard)</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            هسته سبک با مصرف ناچیز رم و باتری و بدون افت سرعت. پایداری بسیار بالا به طوری که هنگام جابجایی بین اینترنت وای‌فای و داده تلفن همراه، اتصال حتی برای یک لحظه قطع نمی‌شود.
+                            هسته سبک با مصرف ناچیز رم و باتری بدون افت سرعت. بدون قطعی اتصال در زمان جابجایی میان اینترنت وای‌فای و داده تلفن همراه، با رمزنگاری مدرن ChaCha20-Poly1305.
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>مصرف باتری: ناچیز</span>
+                        <span class="text-cyber-purple font-mono font-bold">Kernel Grade</span>
                     </div>
                 </div>
 
-                <!-- Protocol 4 -->
-                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-cyber-cyan/15 border border-cyber-cyan/30 flex items-center justify-center shrink-0">
-                        <svg class="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-3-9-3m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                        </svg>
-                    </div>
+                <!-- Protocol 4: Tactical MASQUE TCP H2 -->
+                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <h3 class="text-base sm:text-lg font-bold text-white">تانل ماسک (MASQUE HTTP/2)</h3>
-                            <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-cyber-cyan text-black">وب</span>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-cyan/15 border border-cyber-cyan/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-3-9-3m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-cyber-cyan text-black">تاکتیکی TCP</span>
                         </div>
+                        <h3 class="text-base font-bold text-white mb-2">مسک تاکتیکی (MASQUE H2)</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            پروتکل نسل بعدی تانلینگ بر بستر پورت‌های استاندارد وب؛ ترافیک را به عنوان ارتباطات امن وب شبیه‌سازی می‌کند تا در شبکه‌های سازمانی و فایروال‌های سخت‌گیرانه مسدود نشود.
+                            ترانسپورت استاندارد بر بستر HTTP/2 (TCP) همراه با تکه‌تکه‌سازی هدرها و روتیشن پورت‌های تمیز جهت عبور نفوذناپذیر در شرایط مسدودسازی شدید پروتکل UDP.
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>بستر: پورت‌های تمیز H2</span>
+                        <span class="text-cyber-cyan font-mono font-bold">TCP Fallback</span>
+                    </div>
+                </div>
+
+                <!-- Protocol 5: MASQUE QUIC H3 -->
+                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-amber/15 border border-cyber-amber/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-cyber-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-cyber-amber text-black">نسل آینده</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2">مسک کوئیک (MASQUE H3)</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            پروتکل پیشرفته اینترنت نسل سوم بر پایه QUIC / HTTP3 با صفر پکت‌لاس، شتاب بی‌نظیر استریم ویدیو و هندشیک فوق‌سریع 0-RTT در تمامی شبکه‌ها.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>هندشیک: 0-RTT</span>
+                        <span class="text-cyber-amber font-mono font-bold">HTTP/3 QUIC</span>
+                    </div>
+                </div>
+
+                <!-- Protocol 6: Psiphon Resilient Network -->
+                <div class="glass-panel rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-red/15 border border-cyber-red/30 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-cyber-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-cyber-red text-white">پشتیبان بحران</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2">شبکه سایفون (Psiphon Tunnel)</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            لایه پشتیبان مقاوم در شرایط اختلال شدید سراسری و قطع اینترنت بین‌الملل؛ با بهره‌گیری از شبکه توزیع‌شده هزاران رله مستقل در سراسر جهان.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>نوع: شبکه انعطاف‌پذیر</span>
+                        <span class="text-cyber-red font-mono font-bold">Global Mesh</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
+
+        <!-- ================= SPLIT TUNNELING SECTION ================= -->
+        <section id="split-tunnel" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">نوآوری نسخه ۳.۰.۰</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">تفکیک هوشمند ترافیک برنامه‌ها (Split Tunneling)</h2>
+                <p class="text-xs sm:text-sm text-gray-400">استفاده همزمان از برنامه‌های بانکی داخلی و اینترنت آزاد بین‌الملل بدون قطعی و دردسر</p>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 border-brand/30">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-4">
+                            <span class="w-2 h-2 rounded-full bg-brand"></span>
+                            <span>کنترل ترافیک در سطح هر برنامه</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white mb-3">دیگر نیازی به قطع کردن فیلترشکن برای امور بانکی نیست!</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-4">
+                            در نسخه ۳.۰.۰ SinaVPN می‌توانید با چند لمس ساده، برنامه‌های بومی مانند همراه بانک‌ها، اسنپ، تپسی و سامانه‌های دولتی را از تونل فیلترشکن مستثنی کنید. این برنامه‌ها به طور مستقیم و با سرعت کامل اینترنت داخلی باز می‌شوند، در حالی که یوتیوب، تلگرام، اینستاگرام و وب‌گردی شما با نهایت امنیت از سرورهای ضدسانسور عبور می‌کنند.
+                        </p>
+                        <div class="space-y-2.5 text-xs text-gray-200">
+                            <div class="flex items-center gap-2.5">
+                                <span class="text-brand font-black">✓</span>
+                                <span>جستجوی هوشمند میان تمامی برنامه‌های نصب‌شده روی گوشی</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <span class="text-brand font-black">✓</span>
+                                <span>ذخیره دائمی تنظیمات تفکیک حتی پس از راه‌اندازی مجدد گوشی</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <span class="text-brand font-black">✓</span>
+                                <span>بدون ایجاد اختلال در سرعت و با مصرف بهینه باتری</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Comparison Cards -->
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-2xl bg-white/5 border border-brand/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand/20 flex items-center justify-center text-brand font-bold">
+                                    🛡️
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-white">ترافیک بین‌الملل (تونل امن سینا)</h4>
+                                    <p class="text-[11px] text-gray-400">یوتیوب، تلگرام، اینستاگرام، وب جهانی</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-brand/15 text-brand border border-brand/30">رمزنگاری P-256</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold">
+                                    🏛️
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-white">ترافیک بومی مستقیم (بدون فیلترشکن)</h4>
+                                    <p class="text-[11px] text-gray-400">همراه بانک‌ها، اسنپ، سامانه‌های اداری</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/10 text-gray-300">مسیر مستقیم داخلی</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- ================= OFFICIAL DOWNLOAD CENTER ================= -->
         <section id="download" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">مرکز دانلود مستقیم</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">دانلود مستقیم اپلیکیشن SinaVPN v2.6.0</h2>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">دانلود مستقیم اپلیکیشن SinaVPN v3.0.0</h2>
                 <p class="text-xs sm:text-sm text-gray-400">لینک‌های مستقیم و پرسرعت روی سرورهای ابری گیت‌هاب بدون نیاز به فیلترشکن</p>
             </div>
 
@@ -448,11 +577,11 @@
                         <div class="bg-black/40 rounded-2xl p-4 text-xs text-gray-300 space-y-2.5 mb-6 border border-white/5">
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">ورژن:</span>
-                                <span class="text-brand font-bold font-mono">v2.6.0 (Build 34)</span>
+                                <span class="text-brand font-bold font-mono">v3.0.0 (Build 38)</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">حجم دانلود:</span>
-                                <span class="font-mono text-white font-bold">۲۷.۴ مگابایت</span>
+                                <span class="font-mono text-white font-bold">۲۷.۹ مگابایت</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">سیستم‌عامل:</span>
@@ -466,13 +595,18 @@
                     </div>
 
                     <div class="space-y-2.5">
-                        <a href="https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-Universal.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-brand hover:bg-brand-400 text-black font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
-                            <span>دانلود نسخه Universal (۲۷.۴ MB)</span>
+                        <a href="https://github.com/sinamp00/sina/releases/download/v3.0.0/SinaVPN-v3.0.0-Universal.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-brand hover:bg-brand-400 text-black font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
+                            <span>دانلود نسخه Universal (۲۷.۹ MB)</span>
                             <span class="text-lg font-black">↓</span>
                         </a>
-                        <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-Universal.apk', 'لینک دانلود Universal کپی شد!')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all">
-                            <span>کپی لینک دانلود مستقیم</span>
-                        </button>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v3.0.0/SinaVPN-v3.0.0-Universal.apk', 'لینک دانلود کپی شد!')" class="py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-1.5 border border-white/10 transition-all">
+                                <span>کپی لینک</span>
+                            </button>
+                            <button onclick="copyToClipboard('2a164a82cab56f64e103e01891a2d79a2b3bd17708fd79df0c505aba5e6e0196', 'کد هش SHA-256 کپی شد!')" class="py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-1.5 border border-white/10 transition-all">
+                                <span>کپی هش SHA-256</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -494,7 +628,7 @@
                         <div class="bg-black/40 rounded-2xl p-4 text-xs text-gray-300 space-y-2.5 mb-6 border border-white/5">
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">ورژن:</span>
-                                <span class="text-cyber-teal font-bold font-mono">v2.6.0 (Build 34)</span>
+                                <span class="text-cyber-teal font-bold font-mono">v3.0.0 (Build 38)</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <span class="text-gray-400">حجم دانلود:</span>
@@ -512,13 +646,18 @@
                     </div>
 
                     <div class="space-y-2.5">
-                        <a href="https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-arm64.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-cyber-teal/60 text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
+                        <a href="https://github.com/sinamp00/sina/releases/download/v3.0.0/SinaVPN-v3.0.0-arm64-v8a.apk" class="w-full py-3.5 sm:py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-cyber-teal/60 text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 text-center">
                             <span>دانلود نسخه arm64 (۱۱.۰ MB)</span>
                             <span class="text-lg font-black">↓</span>
                         </a>
-                        <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v2.6.0/SinaVPN-v2.6.0-arm64.apk', 'لینک دانلود arm64 کپی شد!')" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all">
-                            <span>کپی لینک دانلود مستقیم</span>
-                        </button>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="copyToClipboard('https://github.com/sinamp00/sina/releases/download/v3.0.0/SinaVPN-v3.0.0-arm64-v8a.apk', 'لینک دانلود کپی شد!')" class="py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-1.5 border border-white/10 transition-all">
+                                <span>کپی لینک</span>
+                            </button>
+                            <button onclick="copyToClipboard('28e7696e75cc9623a2bc296d253336179da9067cc02202762d7d3e5f3e8e29ea', 'کد هش SHA-256 کپی شد!')" class="py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-semibold flex items-center justify-center gap-1.5 border border-white/10 transition-all">
+                                <span>کپی هش SHA-256</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -539,6 +678,112 @@
 
         </section>
 
+
+        <!-- ================= 15 DYNAMIC THEMES SHOWCASE ================= -->
+        <section id="themes" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-brand uppercase tracking-wider bg-brand/10 px-3 py-1 rounded-full border border-brand/20">شخصی‌سازی ظاهری</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">۱۵ پوسته رنگی اصیل و چشم‌نواز</h2>
+                <p class="text-xs sm:text-sm text-gray-400">امکان تغییر تم کامل برنامه متناسب با سلیقه شما با هماهنگی کامل هاله نوری دکمه اتصال</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 mb-8">
+                <!-- 1 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-brand/60 transition-all group" onclick="switchWebTheme('#00F5A0', 'سبز زمردی')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #00F5A0; box-shadow: 0 0 15px #00F5A088;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-brand transition-colors">سبز زمردی</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">رسمی سپر سینا</p>
+                </div>
+                <!-- 2 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#00F5FF]/60 transition-all group" onclick="switchWebTheme('#00F5FF', 'فیروزه‌ای درخشان')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #00F5FF; box-shadow: 0 0 15px #00F5FF88;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#00F5FF] transition-colors">فیروزه‌ای درخشان</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">شفاف و پرانرژی</p>
+                </div>
+                <!-- 3 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#0A84FF]/60 transition-all group" onclick="switchWebTheme('#0A84FF', 'یاقوت کبود')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #0A84FF; box-shadow: 0 0 15px #0A84FF88;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#0A84FF] transition-colors">یاقوت کبود</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">آبی باوقار و عمیق</p>
+                </div>
+                <!-- 4 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#A855F7]/60 transition-all group" onclick="switchWebTheme('#A855F7', 'یاقوت بنفش')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #A855F7; box-shadow: 0 0 15px #A855F788;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#A855F7] transition-colors">یاقوت بنفش</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">ارغوانی رویایی</p>
+                </div>
+                <!-- 5 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#FF2A85]/60 transition-all group" onclick="switchWebTheme('#FF2A85', 'سرخ نسترن')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #FF2A85; box-shadow: 0 0 15px #FF2A8588;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#FF2A85] transition-colors">سرخ نسترن</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">صورتی درخشان</p>
+                </div>
+                <!-- 6 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#F59E0B]/60 transition-all group" onclick="switchWebTheme('#F59E0B', 'کهربایی خورشیدی')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #F59E0B; box-shadow: 0 0 15px #F59E0B88;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#F59E0B] transition-colors">کهربایی خورشیدی</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">گرم و تابناک</p>
+                </div>
+                <!-- 7 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#FFD700]/60 transition-all group" onclick="switchWebTheme('#FFD700', 'طلایی فاخر')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #FFD700; box-shadow: 0 0 15px #FFD70088;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#FFD700] transition-colors">طلایی فاخر</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">زرین ۲۴ عیار</p>
+                </div>
+                <!-- 8 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#A3E635]/60 transition-all group" onclick="switchWebTheme('#A3E635', 'سبز فسفری')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #A3E635; box-shadow: 0 0 15px #A3E63588;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#A3E635] transition-colors">سبز فسفری</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">چابک و پرکنتراست</p>
+                </div>
+                <!-- 9 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#FF5252]/60 transition-all group" onclick="switchWebTheme('#FF5252', 'سرخ یاقوتی')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #FF5252; box-shadow: 0 0 15px #FF525288;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#FF5252] transition-colors">سرخ یاقوتی</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">حالت استتار</p>
+                </div>
+                <!-- 10 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#C084FC]/60 transition-all group" onclick="switchWebTheme('#C084FC', 'فرابنفش تابناک')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #C084FC; box-shadow: 0 0 15px #C084FC88;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#C084FC] transition-colors">فرابنفش تابناک</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">لیزری و آینده‌نگر</p>
+                </div>
+                <!-- 11 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#FB7185]/60 transition-all group" onclick="switchWebTheme('#FB7185', 'افق شفق')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #FB7185; box-shadow: 0 0 15px #FB718588;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#FB7185] transition-colors">افق شفق</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">مرجانی دلنشین</p>
+                </div>
+                <!-- 12 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#38BDF8]/60 transition-all group" onclick="switchWebTheme('#38BDF8', 'یخین قطبی')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #38BDF8; box-shadow: 0 0 15px #38BDF888;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#38BDF8] transition-colors">یخین قطبی</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">کریستالی زلال</p>
+                </div>
+                <!-- 13 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#22C55E]/60 transition-all group" onclick="switchWebTheme('#22C55E', 'سبز دیجیتال')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #22C55E; box-shadow: 0 0 15px #22C55E88;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#22C55E] transition-colors">سبز دیجیتال</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">جریان زنده داده</p>
+                </div>
+                <!-- 14 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#F43F5E]/60 transition-all group" onclick="switchWebTheme('#F43F5E', 'سرخابی آتشین')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #F43F5E; box-shadow: 0 0 15px #F43F5E88;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#F43F5E] transition-colors">سرخابی آتشین</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">پرشور و چشم‌نواز</p>
+                </div>
+                <!-- 15 -->
+                <div class="glass-panel rounded-2xl p-4 text-center cursor-pointer hover:border-[#94A3B8]/60 transition-all group" onclick="switchWebTheme('#94A3B8', 'نقره‌ای شب')">
+                    <div class="w-8 h-8 rounded-full mx-auto mb-2.5 shadow-lg group-hover:scale-110 transition-transform" style="background: #94A3B8; box-shadow: 0 0 15px #94A3B888;"></div>
+                    <h4 class="text-xs font-bold text-white group-hover:text-[#94A3B8] transition-colors">نقره‌ای شب</h4>
+                    <p class="text-[10px] text-gray-400 mt-0.5">سیمین متالیک</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-[11px] text-gray-400">
+                💡 با کلیک روی هر رنگ، می‌توانید پیش‌نمایش زنده تم را در همین صفحه مشاهده نمایید.
+            </p>
+        </section>
         <!-- ================= WHY SINAVPN COMPARISON ================= -->
         <section id="features" class="py-14 sm:py-16 scroll-mt-20 border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-10">
@@ -551,7 +796,7 @@
                 
                 <div class="glass-panel rounded-2xl p-5 border-white/10">
                     <h3 class="text-sm font-bold text-white mb-1.5">بای‌پس فیلترینگ شدید</h3>
-                    <p class="text-xs text-brand font-bold mb-2">✓ ۴ موتور هوشمند ضدتحریم</p>
+                    <p class="text-xs text-brand font-bold mb-2">✓ ۶ موتور هوشمند ضدتحریم</p>
                     <p class="text-xs text-gray-400 leading-relaxed">اتصال پایدار حتی در ساعات اوج محدودیت و اینترنت ملی با ترکیب فرگمنت و پروتکل‌های چندگانه.</p>
                 </div>
 
@@ -658,11 +903,11 @@
                 <!-- FAQ Item 1 -->
                 <div class="glass-panel rounded-2xl border-white/10 overflow-hidden">
                     <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 text-right flex items-center justify-between text-xs sm:text-sm font-bold text-white hover:text-brand transition-colors">
-                        <span>آیا نسخه ۲.۶.۰ روی همراه اول، ایرانسل و رایتل متصل می‌شود؟</span>
+                        <span>آیا نسخه ۳.۰.۰ روی همراه اول، ایرانسل و رایتل متصل می‌شود؟</span>
                         <span class="text-brand text-base transform transition-transform duration-200">▾</span>
                     </button>
                     <div class="hidden px-4 sm:px-5 pb-4 sm:pb-5 text-xs text-gray-300 leading-relaxed border-t border-white/5 pt-3">
-                        بله، الگوریتم‌های هوشمند اسکن در نسخه ۲.۶.۰ رله‌های اختصاصی و تمیز Anycast را متناسب با تک‌تک اپراتورهای موبایل و اینترنت‌های خانگی شناسایی کرده و اتصال بدون اختلال برقرار می‌سازند.
+                        بله، الگوریتم‌های هوشمند اسکن در نسخه ۳.۰.۰ رله‌های اختصاصی و تمیز Anycast را متناسب با تک‌تک اپراتورهای موبایل و اینترنت‌های خانگی شناسایی کرده و اتصال بدون اختلال برقرار می‌سازند.
                     </div>
                 </div>
 
@@ -716,7 +961,7 @@
             <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
                 <a href="https://github.com/sinamp00/sina" target="_blank" class="hover:text-brand transition-colors">مخزن گیت‌هاب</a>
                 <span class="text-white/20">•</span>
-                <a href="https://github.com/sinamp00/sina/releases/tag/v2.6.0" target="_blank" class="hover:text-brand transition-colors">لیست رلیزها</a>
+                <a href="https://github.com/sinamp00/sina/releases/tag/v3.0.0" target="_blank" class="hover:text-brand transition-colors">لیست رلیزها</a>
                 <span class="text-white/20">•</span>
                 <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="hover:text-brand transition-colors">ربات تلگرام</a>
             </div>
@@ -757,7 +1002,7 @@
                     vx: (Math.random() - 0.5) * 0.35,
                     vy: (Math.random() - 0.5) * 0.35,
                     size: Math.random() * 1.8 + 1,
-                    color: Math.random() > 0.5 ? '#CCFF00' : '#00FFA3'
+                    color: Math.random() > 0.5 ? '#00F5A0' : '#00FFA3'
                 });
             }
 
@@ -845,6 +1090,20 @@
             setTimeout(() => {
                 toast.style.opacity = '0';
             }, 2200);
+        }
+
+        // 4. Interactive Live Theme Switcher
+        function switchWebTheme(color, name) {
+            document.documentElement.style.setProperty('--brand-color', color);
+            const brandEls = document.querySelectorAll('.text-brand');
+            brandEls.forEach(el => el.style.color = color);
+            const brandBgEls = document.querySelectorAll('.bg-brand');
+            brandBgEls.forEach(el => {
+                if (!el.classList.contains('text-black')) {
+                    el.style.backgroundColor = color;
+                }
+            });
+            showToast('تم به «' + name + '» تغییر یافت');
         }
     </script>
 
