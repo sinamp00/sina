@@ -1,8 +1,8 @@
 {
-  "version": "3.6.0",
-  "notes": "🛡️ آپدیت SinaVPN نسخه ۳.۶.۰ (پروتکل اختصاصی موزیلا فستلی با ۵۰ گیگابایت سهمیه و رله DoH):\n• افزوده شدن پروتکل اختصاصی Mozilla Fastly MASQUE با ۵۰ گیگابایت سهمیه ماهانه رایگان\n• پیاده‌سازی رله پرسرعت DoH (DNS-over-HTTPS) برای وب‌گردی و اتصال پایدار تمام اپلیکیشن‌ها\n• انتقال انتخاب کشور و سرور به کادر مصرف حجم در صفحه اصلی همراه با پرچم و عنوان شهر\n• اتصال فوق‌سریع کمتر از ۱ ثانیه به سرورهای لبه ابری فستلی\n• بهبود عملکرد و رفع باگ لود نشدن سایت‌ها در پروتکل موزیلا",
-  "download_url": "https://github.com/sinamp00/sina/releases/download/v3.6.0/SinaVPN-v3.6.0-Universal.apk",
-  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v3.6.0/SinaVPN-v3.6.0-arm64-v8a.apk",
-  "checksum": "3771dda72161a17848f2d642617c788f4564dc7272fd5e0cba5b747b665f1731",
-  "checksum_arm64": "839519bcdf5f2dde11b60c9b11f7db0f74fb3ece07f1026d37d05b8b7c8c113a"
+  "version": "3.6.1",
+  "notes": "🛡️ آپدیت SinaVPN نسخه ۳.۶.۱ (بهینه‌سازی رابط کاربری و پروتکل موزیلا):\n• بازطراحی کپسول شیشه‌ای و فشرده حجم و انتخاب کشور در صفحه اصلی همراه با هاله نوری تم\n• بازطراحی اصولی کارت پروتکل موزیلا و یکپارچه‌سازی انتخاب با لمس مستقیم کارت\n• تفکیک کامل زبان‌های فارسی و انگلیسی و اصلاح پالت رنگ‌ها\n• حذف گزینه‌های اضافی و بهبود عملکرد رله ترافیک DoH",
+  "download_url": "https://github.com/sinamp00/sina/releases/download/v3.6.1/SinaVPN-v3.6.1-Universal.apk",
+  "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v3.6.1/SinaVPN-v3.6.1-arm64-v8a.apk",
+  "checksum": "501ed6743361cc8e6a7a480257c58bfe9da1cc4d12ee57119b3af2f2302b35f1",
+  "checksum_arm64": "348ec266089bb01f05b1e27bc738ebb451f84ee220c64cf071551417036565d4"
 }
