@@ -7,16 +7,16 @@
 [![License Security](https://img.shields.io/badge/Security-ECDSA%20P--256-B388FF?style=for-the-badge)](https://github.com/sinamp00/sina)
 [![Website](https://img.shields.io/badge/Website-Live%20Page-00F5A0?style=for-the-badge)](https://sinamp00.github.io/sina/)
 
-**SinaVPN نسخه ۳.۰.۰** کلاینت پیشرفته و بومی اندروید برای عبور پایدار و نفوذناپذیر از محدودیت‌ها و سامانه‌های بازرسی عمیق بسته‌ها (DPI) در انواع شبکه‌های اینترنت است. این نسخه با ترکیب ۶ هسته اتصال ضدسانسور، معماری جامع یونیورسال، تفکیک ترافیک برنامه‌ها (Split Tunneling)، طراحی مدرن شیشه‌ای (Liquid Glass) و رمزنگاری آفلاین بدون نیاز به حساب کاربری ارائه شده است.
+**SinaVPN نسخه ۳.۶.۰** کلاینت پیشرفته و بومی اندروید برای عبور پایدار و نفوذناپذیر از محدودیت‌ها و سامانه‌های بازرسی عمیق بسته‌ها (DPI) در انواع شبکه‌های اینترنت است. این نسخه با ترکیب پروتکل اختصاصی موزیلا فستلی، ۶ هسته اتصال ضدسانسور، رله هوشمند DoH، معماری جامع یونیورسال، تفکیک ترافیک برنامه‌ها (Split Tunneling)، طراحی مدرن شیشه‌ای (Liquid Glass) و رمزنگاری آفلاین ارائه شده است.
 
 ---
 
-## 📥 لینک‌های مستقیم دانلود نسخه رسمی (v3.0.0)
+## 📥 لینک‌های مستقیم دانلود نسخه رسمی (v3.6.0)
 
 | نسخه فایل | معماری پردازنده | حجم فایل | هش رسمی SHA-256 | لینک دانلود مستقیم |
 | :--- | :--- | :--- | :--- | :--- |
-| **Universal (پیشنهادی)** | کلیه دستگاه‌ها و پردازنده‌ها (All Archs) | ۲۷.۹ مگابایت | `2a164a82cab56f64e103e01891a2d79a2b3bd17708fd79df0c505aba5e6e0196` | [📥 دانلود نسخه Universal](https://github.com/sinamp00/sina/releases/download/v3.0.0/SinaVPN-v3.0.0-Universal.apk) |
-| **arm64-v8a (فوق سبک)** | گوشی‌های مدرن ۶۴ بیتی (Snapdragon, Tensor, Dimensity...) | ۱۱.۰ مگابایت | `28e7696e75cc9623a2bc296d253336179da9067cc02202762d7d3e5f3e8e29ea` | [📥 دانلود نسخه arm64](https://github.com/sinamp00/sina/releases/download/v3.0.0/SinaVPN-v3.0.0-arm64-v8a.apk) |
+| **Universal (پیشنهادی)** | کلیه دستگاه‌ها و پردازنده‌ها (All Archs) | ۲۹.۳ مگابایت | `be085fb9e4e1d0aeccea50d2e87ba57846fa977fd62f89b5d01c2f165b23138f` | [📥 دانلود نسخه Universal](https://github.com/sinamp00/sina/releases/download/v3.6.0/SinaVPN-v3.6.0-Universal.apk) |
+| **arm64-v8a (فوق سبک)** | گوشی‌های مدرن ۶۴ بیتی (Snapdragon, Tensor, Dimensity...) | ۱۳.۰ مگابایت | `5e3e393b9fdb84e4edb73aa4c7503f52e3154f386a75361957539b57cf7b9af1` | [📥 دانلود نسخه arm64](https://github.com/sinamp00/sina/releases/download/v3.6.0/SinaVPN-v3.6.0-arm64-v8a.apk) |
 
 > 🌐 **وب‌سایت رسمی و دانلود مستقیم**: [https://sinamp00.github.io/sina/](https://sinamp00.github.io/sina/)  
 > 🔄 **سیستم به‌روزرسانی درون‌برنامه‌ای هوشمند**: متصل به مخزن رسمی، بدون پاپ‌آپ‌های مسدودکننده با قابلیت بررسی و نصب مستقیم.
