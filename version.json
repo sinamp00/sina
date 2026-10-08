@@ -3,6 +3,6 @@
   "notes": "🛡️ آپدیت SinaVPN نسخه ۳.۶.۰ (پروتکل اختصاصی موزیلا فستلی با ۵۰ گیگابایت سهمیه و رله DoH):\n• افزوده شدن پروتکل اختصاصی Mozilla Fastly MASQUE با ۵۰ گیگابایت سهمیه ماهانه رایگان\n• پیاده‌سازی رله پرسرعت DoH (DNS-over-HTTPS) برای وب‌گردی و اتصال پایدار تمام اپلیکیشن‌ها\n• انتقال انتخاب کشور و سرور به کادر مصرف حجم در صفحه اصلی همراه با پرچم و عنوان شهر\n• اتصال فوق‌سریع کمتر از ۱ ثانیه به سرورهای لبه ابری فستلی\n• بهبود عملکرد و رفع باگ لود نشدن سایت‌ها در پروتکل موزیلا",
   "download_url": "https://github.com/sinamp00/sina/releases/download/v3.6.0/SinaVPN-v3.6.0-Universal.apk",
   "download_url_arm64": "https://github.com/sinamp00/sina/releases/download/v3.6.0/SinaVPN-v3.6.0-arm64-v8a.apk",
-  "checksum": "be085fb9e4e1d0aeccea50d2e87ba57846fa977fd62f89b5d01c2f165b23138f",
-  "checksum_arm64": "5e3e393b9fdb84e4edb73aa4c7503f52e3154f386a75361957539b57cf7b9af1"
+  "checksum": "3771dda72161a17848f2d642617c788f4564dc7272fd5e0cba5b747b665f1731",
+  "checksum_arm64": "839519bcdf5f2dde11b60c9b11f7db0f74fb3ece07f1026d37d05b8b7c8c113a"
 }
